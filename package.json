@@ -1,0 +1,23 @@
+﻿{
+  "name": "legalai-platform",
+  "version": "1.0.0",
+  "description": "Full-Stack Legal AI Platform - Jurisprudence Precision",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [
+    "legalai",
+    "legal-tech",
+    "contract-analysis",
+    "ai-assistant"
+  ],
+  "author": "LegalAI Systems",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "multer": "^1.4.5-lts.1"
+  }
+}

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-fixed-variant":"#3f465c","outline":"#76777d","on-primary-container":"#7c839b","secondary-fixed-dim":"#b4c5ff","on-surface":"#0b1c30","surface-container-highest":"#d3e4fe","primary-container":"#131b2e","secondary":"#0051d5","on-primary-fixed":"#131b2e","on-background":"#0b1c30","outline-variant":"#c6c6cd","on-tertiary":"#ffffff","on-tertiary-fixed-variant":"#3323cc","error-container":"#ffdad6","surface-container-low":"#eff4ff","secondary-fixed":"#dbe1ff","on-secondary-fixed-variant":"#003ea8","inverse-surface":"#213145","tertiary":"#000000","on-tertiary-fixed":"#0f0069","primary":"#000000","on-tertiary-container":"#7671ff","on-secondary-fixed":"#00174b","surface-tint":"#565e74","surface-container":"#e5eeff","tertiary-fixed":"#e2dfff","primary-fixed-dim":"#bec6e0","surface-variant":"#d3e4fe","tertiary-fixed-dim":"#c3c0ff","secondary-container":"#316bf3","tertiary-container":"#0f0069","inverse-primary":"#bec6e0","surface-container-lowest":"#ffffff","primary-fixed":"#dae2fd","inverse-on-surface":"#eaf1ff","surface":"#f8f9ff","on-primary":"#ffffff","surface-dim":"#cbdbf5","on-surface-variant":"#45464d","on-secondary-container":"#fefcff","on-secondary":"#ffffff","on-error":"#ffffff","surface-container-high":"#dce9ff","background":"#f8f9ff","error":"#ba1a1a","on-error-container":"#93000a","surface-bright":"#f8f9ff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-md":"1rem","margin-sm":"1rem","margin":"2rem","space-xl":"2rem","space-xs":"0.25rem","gutter":"1.5rem","space-sm":"0.5rem","space-lg":"1.5rem","gutter-sm":"1rem"},fontFamily:{"headline-lg":["Geist"],"label-md":["Geist"],"body-lg":["Inter"],"code-sm":["JetBrains Mono"],"body-md":["Inter"],"display-lg":["Geist"],"headline-sm":["Geist"],"body-sm":["Inter"],"headline-md":["Geist"],"label-sm":["Geist"],"display-lg-mobile":["Geist"]},fontSize:{"headline-lg":["1.5rem",{lineHeight:"2rem",letterSpacing:"-0.02em",fontWeight:"600"}],"label-md":["0.8125rem",{lineHeight:"1rem",letterSpacing:"0.01em",fontWeight:"500"}],"body-lg":["1rem",{lineHeight:"1.625rem",letterSpacing:"-0.005em",fontWeight:"400"}],"code-sm":["0.75rem",{lineHeight:"1rem",letterSpacing:"-0.01em",fontWeight:"400"}],"body-md":["0.875rem",{lineHeight:"1.5rem",letterSpacing:"0em",fontWeight:"400"}],"display-lg":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.03em",fontWeight:"600"}],"headline-sm":["1.125rem",{lineHeight:"1.5rem",letterSpacing:"-0.01em",fontWeight:"500"}],"body-sm":["0.8125rem",{lineHeight:"1.375rem",letterSpacing:"0.005em",fontWeight:"400"}],"headline-md":["1.25rem",{lineHeight:"1.75rem",letterSpacing:"-0.015em",fontWeight:"600"}],"label-sm":["0.75rem",{lineHeight:"0.875rem",letterSpacing:"0.04em",fontWeight:"600"}],"display-lg-mobile":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.025em",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 bottom-0 w-64 bg-primary-container z-50 flex flex-col justify-between py-space-md"><div class="flex flex-col"><div class="px-space-md pb-space-md flex items-center justify-between"><a href="/dashboard" class="flex items-center gap-space-sm hover:opacity-90 transition-opacity"><img alt="LegalAI Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WJyjjwtFDHqN397HAeLRbHUIB_gJxKn1ytEQZCBObZ0y89MXwNjnrjuLk1PQzoy8edt_ujRhHw_3ILNVK5VdR6gIhSwGMliCkGYOkHFpjv3Dt-1jLI1Vz23gSVDtx7RIDd4Ws6j-fZj5WstcYpB3o_fWWS7J6YPo4Dy-t5EmeqFeK1W6kOyXCodoNkQ_em1w0D6qtbcGzM4ewV5vfN_jowGQXsIi5XT0JWn-R0Nsm8FVasVWNkNwk39nS4"/><span class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">LegalAI</span></a><span class="font-code-sm text-code-sm px-space-xs py-0.5 rounded bg-surface-container-highest/20 text-on-primary-container">v2.4</span></div><div class="px-space-md py-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-primary-container">Workspace</span></div><nav class="flex flex-col gap-space-xs px-space-sm mt-space-xs" data-active-classes="bg-surface-container-highest/20 text-on-primary font-medium rounded-lg"><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="dashboard" href="#">Dashboard</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="ai-assistant" href="#">AI Assistant</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="documents" href="#">Documents</a><a class="flex items-center pl-space-lg pr-space-sm py-1.5 rounded-lg text-on-primary-container/80 hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-sm text-label-sm" data-path="document-analysis" href="#">Document Analysis</a><a aria-current="page" class="flex items-center px-space-sm py-space-sm transition-colors bg-surface-container-highest/20 text-on-primary font-medium rounded-lg" data-path="legal-research" href="#">Legal Research</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="compare" href="#">Compare</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="cases" href="#">Cases</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="drafts" href="#">Drafts</a></nav></div><div class="flex flex-col gap-space-xs px-space-sm"><nav class="flex flex-col gap-space-xs mb-space-sm" data-active-classes="bg-surface-container-highest/20 text-on-primary font-medium rounded-lg"><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="settings" href="#">Settings</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="documentation" href="#">Help &amp; Documentation</a></nav><div class="pt-space-sm px-space-sm flex items-center justify-between bg-surface-container-highest/10 rounded-lg p-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="Elena Vance profile" class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1FUQjK8cFPlzpv7UYlZxPoZ-dcEBxSThB_UEaVFqxRMGpG6IpSz86i54g--Tv6r0Y4sWZ-EGtj-f7Dz7XXrD97YkCF__Chs4DetAt_2PudOgk2oRx53aIUZcluV2HxujrqRcjommNCd7M0fJ3orcbarNoYXdeDggQdij4XxJsApZuWLZy2dJ01lcJBCAod95Xa3h6dpj_lviqTYkzoaKod6003ctFV8LC7kD3Py8HgQDdqyYPlnVMlg"/><div class="flex flex-col truncate"><span class="font-label-md text-label-md text-on-primary truncate font-medium">Elena Vance, Esq.</span><span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-wider">Enterprise Plan</span></div></div><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer text-base">unfold_more</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 z-40 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="flex items-center w-full bg-surface-container-low rounded-lg px-space-sm py-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-lg mr-space-sm">search</span><span class="font-body-sm text-body-sm flex-1 text-on-surface-variant/70">Search documents, statutes, clauses...</span><span class="font-code-sm text-code-sm bg-surface-container-highest/60 text-on-surface px-space-xs py-0.5 rounded">⌘K</span></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded-full"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Verified Citation Engine Active</span></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1FUQjK8cFPlzpv7UYlZxPoZ-dcEBxSThB_UEaVFqxRMGpG6IpSz86i54g--Tv6r0Y4sWZ-EGtj-f7Dz7XXrD97YkCF__Chs4DetAt_2PudOgk2oRx53aIUZcluV2HxujrqRcjommNCd7M0fJ3orcbarNoYXdeDggQdij4XxJsApZuWLZy2dJ01lcJBCAod95Xa3h6dpj_lviqTYkzoaKod6003ctFV8LC7kD3Py8HgQDdqyYPlnVMlg"/></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glow Canvas Decorator -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-24 right-1/4 w-96 h-96 rounded-full bg-surface-container-highest/40 blur-3xl pointer-events-none"></div>
+<div class="absolute top-48 left-10 w-72 h-72 rounded-full bg-secondary-fixed/30 blur-3xl pointer-events-none"></div>
+<!-- Main Workspace Frame -->
+<div class="relative px-space-lg py-space-md flex flex-col gap-space-lg max-w-[1600px] mx-auto w-full">
+<!-- Header Strip: Title, Subtitle, Authority Status Badge -->
+<section class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-semibold">Legal Research</span>
+<span class="font-code-sm text-code-sm bg-surface-container text-on-surface-variant px-2 py-0.5 rounded uppercase tracking-wider font-medium">LexSearch v4.1</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            Explore authoritative legal information, statutes, precedents, and regulations using source-backed search.
+          </p>
+</div>
+<div class="flex items-center gap-space-sm self-start lg:self-center bg-surface-container-low px-space-md py-space-sm rounded-lg">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Live Citation Authority</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-medium">Federal, State &amp; International Jurisdictions Active</span>
+</div>
+</div>
+</section>
+<!-- Search & Structured Query Builder Section -->
+<section class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<!-- Main Search Bar -->
+<div class="flex items-center bg-surface-container-low rounded-lg px-space-md py-space-sm gap-space-sm shadow-inner focus-within:bg-surface-container-lowest transition-colors">
+<span class="material-symbols-outlined text-secondary text-2xl">search</span>
+<input class="w-full bg-transparent font-body-lg text-body-lg text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none" id="search-input" placeholder="What are you researching? e.g., Requirements for terminating an employment contract in California or India..." type="text" value="Requirements for terminating an employment contract in India"/>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-xs py-1 rounded bg-surface-container-highest text-on-surface font-code-sm text-code-sm uppercase">Enter ↵</button>
+<button class="hidden sm:flex items-center gap-1 px-space-xs py-1 rounded bg-surface-container text-on-surface-variant font-code-sm text-code-sm">
+<span class="text-xs">⌘</span>K
+            </button>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary px-space-lg py-space-xs rounded-lg font-label-md text-label-md transition-colors flex items-center gap-space-xs flex-shrink-0">
+<span>Execute Search</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+<!-- Quick Filter Pills Ribbon -->
+<div class="flex items-center justify-between flex-wrap gap-space-sm pt-space-xs">
+<div class="flex items-center flex-wrap gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant/80 mr-1">Active Facets:</span>
+<!-- Filter: Jurisdiction -->
+<div class="inline-flex items-center gap-space-xs bg-surface-container-highest/60 text-on-surface px-space-sm py-1 rounded-full font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm text-secondary">public</span>
+<span class="text-on-surface font-medium">Jurisdiction: <span class="font-semibold text-primary">India</span></span>
+<button class="hover:text-error transition-colors flex items-center ml-0.5"><span class="material-symbols-outlined text-xs">close</span></button>
+</div>
+<!-- Filter: Document Type -->
+<div class="inline-flex items-center gap-space-xs bg-surface-container-low text-on-surface px-space-sm py-1 rounded-full font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">gavel</span>
+<span class="text-on-surface-variant">Type: <span class="font-medium text-on-surface">Statutes &amp; Acts</span></span>
+<button class="hover:text-error transition-colors flex items-center ml-0.5"><span class="material-symbols-outlined text-xs">close</span></button>
+</div>
+<!-- Filter: Year -->
+<div class="inline-flex items-center gap-space-xs bg-surface-container-low text-on-surface px-space-sm py-1 rounded-full font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">calendar_month</span>
+<span class="text-on-surface-variant">Year: <span class="font-medium text-on-surface">2020 – 2025</span></span>
+<button class="hover:text-error transition-colors flex items-center ml-0.5"><span class="material-symbols-outlined text-xs">close</span></button>
+</div>
+<!-- Filter: Authority -->
+<div class="inline-flex items-center gap-space-xs bg-surface-container-low text-on-surface px-space-sm py-1 rounded-full font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">verified_user</span>
+<span class="text-on-surface-variant">Authority: <span class="font-medium text-on-surface">Official Gazette</span></span>
+<button class="hover:text-error transition-colors flex items-center ml-0.5"><span class="material-symbols-outlined text-xs">close</span></button>
+</div>
+<!-- Filter: Topic -->
+<div class="inline-flex items-center gap-space-xs bg-surface-container-low text-on-surface px-space-sm py-1 rounded-full font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">badge</span>
+<span class="text-on-surface-variant">Topic: <span class="font-medium text-on-surface">Labor &amp; Employment</span></span>
+<button class="hover:text-error transition-colors flex items-center ml-0.5"><span class="material-symbols-outlined text-xs">close</span></button>
+</div>
+</div>
+<!-- Reset Filter Button -->
+<button class="font-label-md text-label-md text-secondary hover:text-on-secondary-fixed-variant flex items-center gap-1 transition-colors font-medium">
+<span class="material-symbols-outlined text-base">restart_alt</span>
+<span>Clear / Reset filters</span>
+</button>
+</div>
+</section>
+<!-- 60/40 Split Workspace Area -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT/CENTER COLUMN: Search Results (approx 60% on desktop) -->
+<main class="lg:col-span-7 flex flex-col gap-space-md min-w-0">
+<!-- Query Status Summary & Sorting Bar -->
+<div class="flex items-center justify-between px-space-sm py-1 flex-wrap gap-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="font-semibold text-on-surface">Showing 14 results</span>
+<span>for “Requirements for terminating an employment contract”</span>
+<span class="text-outline-variant">•</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface font-medium">India</span>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface-variant">Labor &amp; Industrial Relations</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-medium">Sort by:</span>
+<select class="bg-surface-container-lowest font-label-md text-label-md text-on-surface px-space-sm py-1 rounded shadow-sm focus:outline-none">
+<option>Statutory Precedence</option>
+<option>Most Recent Enactment</option>
+<option>Judicial Citation Density</option>
+</select>
+</div>
+</div>
+<!-- Result Card 1: ACTIVE / SELECTED -->
+<article class="relative bg-surface-container-lowest p-space-lg rounded-xl shadow-md transition-all flex flex-col gap-space-md">
+<!-- Left accent color block representing active state -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary rounded-l-xl"></div>
+<!-- Result 1 Header -->
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm pl-space-xs">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 bg-surface-container text-secondary font-label-sm text-label-sm px-space-sm py-0.5 rounded font-semibold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Central Legislation
+                  </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Act No. 14 of 1947</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Section 25F</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">
+                  Industrial Disputes Act, 1947 — Conditions of Service and Termination
+                </h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">
+                  Official Gazette of India • Central Ministry of Labour and Employment
+                </span>
+</div>
+<span class="self-start px-2.5 py-1 bg-surface-container-highest text-secondary rounded-full font-code-sm text-code-sm font-semibold whitespace-nowrap">
+                Selected for Inspection
+              </span>
+</div>
+<!-- Metadata Chips Strip -->
+<div class="flex items-center flex-wrap gap-space-xs pl-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-sm text-secondary">map</span>
+<span>Jurisdiction: <strong class="text-on-surface font-medium">India (Central)</strong></span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">update</span>
+<span>Last Amended: <strong class="text-on-surface font-medium">2020 (Code on Occupational Safety &amp; Conditions)</strong></span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">verified</span>
+<span>Verified Full Text</span>
+</div>
+</div>
+<!-- Verbatim Snippet Box with Highlighting -->
+<div class="bg-surface-container-low/70 p-space-md rounded-lg pl-space-md">
+<div class="flex items-center justify-between pb-space-xs text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+<span>Verbatim Statutory Extract • Sub-section (a)</span>
+<span class="font-code-sm text-code-sm text-secondary">Enforceable Text</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed italic">
+                “No workman employed in any industry who has been in continuous service for not less than one year under an employer shall be retrenched by that employer until the workman has been given 
+                <span class="bg-secondary-fixed text-on-secondary-fixed font-semibold px-1.5 py-0.5 rounded">one month’s notice in writing indicating the reasons for retrenchment</span> 
+                and the period of notice has expired, or the workman has been paid in lieu of such notice, wages for the period of the notice...”
+              </p>
+</div>
+<!-- Functional Tags -->
+<div class="flex items-center flex-wrap gap-space-xs pl-space-xs">
+<span class="bg-surface-container text-on-surface-variant px-space-sm py-0.5 rounded-full font-label-sm text-label-sm font-medium">Statutory Requirement</span>
+<span class="bg-surface-container text-on-surface-variant px-space-sm py-0.5 rounded-full font-label-sm text-label-sm font-medium">Mandatory Notice</span>
+<span class="bg-surface-container text-on-surface-variant px-space-sm py-0.5 rounded-full font-label-sm text-label-sm font-medium">Compensation</span>
+<span class="bg-surface-container text-on-surface-variant px-space-sm py-0.5 rounded-full font-label-sm text-label-sm font-medium">Workman Rights</span>
+</div>
+<!-- Action Ribbon -->
+<div class="flex items-center justify-between flex-wrap gap-space-sm pt-space-xs pl-space-xs">
+<div class="flex items-center gap-space-xs">
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-space-md py-space-xs rounded-lg transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base">description</span>
+<span>View Full Statute</span>
+</button>
+<button class="bg-secondary-container hover:bg-secondary text-on-secondary-container font-label-md text-label-md px-space-md py-space-xs rounded-lg transition-colors flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-base">auto_awesome</span>
+<span>Ask AI About This Section</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<button class="p-2 hover:bg-surface-container rounded-lg transition-colors" title="Bookmark Citation">
+<span class="material-symbols-outlined text-lg">bookmark</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-lg transition-colors flex items-center gap-1 font-label-sm text-label-sm" title="Copy Bluebook Citation">
+<span class="material-symbols-outlined text-lg">content_copy</span>
+<span class="hidden sm:inline">Bluebook</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-lg transition-colors" title="Share Link">
+<span class="material-symbols-outlined text-lg">share</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Result Card 2 -->
+<article class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 bg-surface-container text-on-surface font-label-sm text-label-sm px-space-sm py-0.5 rounded font-medium uppercase tracking-wider">
+                    Standing Order
+                  </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Schedule I • Clause 13</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">India</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight hover:text-secondary cursor-pointer transition-colors">
+                  The Industrial Employment (Standing Orders) Act, 1946
+                </h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">
+                  Government of India Legislative Department • Updated 2019
+                </span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant bg-surface-container px-2 py-1 rounded self-start">
+                98% Semantic Match
+              </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Provisions governing notice periods for permanent vs probationers, requirements of domestic inquiry, and notice pay calculation rules across industrial establishments employing 100+ workmen.
+            </p>
+<div class="flex items-center justify-between flex-wrap gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs">
+<button class="bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-md text-label-md px-space-md py-space-xs rounded-lg transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-base">visibility</span>
+<span>View Source</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-highest text-secondary font-label-md text-label-md px-space-md py-space-xs rounded-lg transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-base">auto_awesome</span>
+<span>Ask AI</span>
+</button>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant">32 Judicial Citations</span>
+</div>
+</article>
+<!-- Result Card 3 -->
+<article class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 bg-surface-container text-on-surface font-label-sm text-label-sm px-space-sm py-0.5 rounded font-medium uppercase tracking-wider">
+                    State Legislature
+                  </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Delhi NCT • Section 30</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Amended 2022</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight hover:text-secondary cursor-pointer transition-colors">
+                  Delhi Shops and Establishments Act, 1954 — Notice of Dismissal
+                </h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">
+                  Delhi State Legislature • Commercial Establishment Protections
+                </span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant bg-surface-container px-2 py-1 rounded self-start">
+                92% Semantic Match
+              </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Requirement of thirty days notice in writing or payment in lieu for employees who have been in continuous employment for not less than three months in commercial offices, technology centers, and service firms in the National Capital Territory.
+            </p>
+<div class="flex items-center justify-between flex-wrap gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs">
+<button class="bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-md text-label-md px-space-md py-space-xs rounded-lg transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-base">visibility</span>
+<span>View Source</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-highest text-secondary font-label-md text-label-md px-space-md py-space-xs rounded-lg transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-base">auto_awesome</span>
+<span>Ask AI</span>
+</button>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant">19 State Precedents</span>
+</div>
+</article>
+<!-- In-Corpus Research Activity Widget -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="p-3 bg-surface-container-lowest rounded-lg shadow-sm">
+<!-- Inline mini analytical SVG chart: Query Confidence Distribution -->
+<svg class="w-8 h-8 text-secondary" viewbox="0 0 36 36">
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="88, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Corpus Confidence Score: 88.4%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Validated against 1,240 Supreme Court rulings and 4 Central Labor Codes</span>
+</div>
+</div>
+<button class="font-label-md text-label-md text-secondary hover:underline font-semibold whitespace-nowrap">
+              Run Comprehensive Dossier
+            </button>
+</div>
+</main>
+<!-- RIGHT COLUMN: Detailed Provenance Inspector & Authority Filters (approx 40% on desktop) -->
+<aside class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Provenance Inspector Panel (For Active Section 25F) -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex flex-col gap-space-md relative overflow-hidden">
+<!-- Inspector Header with Green Seal -->
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-xl">account_balance</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Official Source Provenance</span>
+</div>
+<div class="inline-flex items-center gap-1.5 bg-surface-container-lowest px-2.5 py-1 rounded-full shadow-sm text-on-surface">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm font-semibold text-secondary">Primary Source</span>
+</div>
+</div>
+<!-- Act & Statutory Identifier Card -->
+<div class="flex flex-col gap-1 bg-surface-container-low p-space-md rounded-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Canonical Act</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                Industrial Disputes Act, 1947
+              </h4>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-medium">
+                Official Identifier: Act No. 14 of 1947
+              </span>
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs mt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Enacted</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">March 11, 1947</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Effective</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">April 1, 1947</span>
+</div>
+<div class="flex flex-col col-span-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sovereign Authority</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Parliament of India • Ministry of Law &amp; Justice</span>
+</div>
+</div>
+</div>
+<!-- Official Repository Link & Hash -->
+<div class="flex flex-col gap-2">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Digital Archive Repository</span>
+<a class="font-code-sm text-code-sm text-secondary hover:underline flex items-center gap-1 break-all pt-0.5" href="#">
+<span class="material-symbols-outlined text-sm">link</span>
+<span>https://indiacode.nic.in/handle/123456789/1518</span>
+</a>
+</div>
+<!-- Cryptographic Hash Verification Pill -->
+<div class="flex flex-col bg-surface-container p-2.5 rounded-lg">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Citation Hash</span>
+<span class="material-symbols-outlined text-sm text-secondary">fingerprint</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface break-all font-mono select-all">
+                  sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                </span>
+</div>
+</div>
+<!-- AI Legal Plain-Language Explanation Card -->
+<div class="bg-gradient-to-b from-surface-container-low to-surface-container-lowest p-space-md rounded-xl flex flex-col gap-2 shadow-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-base">psychology</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">
+                  AI Legal Plain-Language Explanation
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+                Under <strong>Section 25F</strong>, any employee meeting the statutory “workman” definition with continuous service of 1+ year cannot be terminated without:
+              </p>
+<ul class="font-body-sm text-body-sm text-on-surface list-disc pl-5 flex flex-col gap-1 leading-snug">
+<li><strong class="text-primary font-medium">(1)</strong> One month formal written notice detailing explicit grounds, OR full 1 month wage payout in lieu of notice;</li>
+<li><strong class="text-primary font-medium">(2)</strong> Retrenchment compensation equivalent to <strong>15 days average pay</strong> for every completed year of continuous service.</li>
+</ul>
+</div>
+<!-- Related Provisions & Case Precedents -->
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Related Provisions &amp; Precedents</span>
+<div class="flex flex-col gap-2">
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-start justify-between gap-space-xs hover:bg-surface-container transition-colors">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">State Bank of India v. N. Sundara Money (1976)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Landmark ruling expanding retrenchment definition to any termination</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-base">north_east</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-start justify-between gap-space-xs hover:bg-surface-container transition-colors">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Section 25N, Industrial Disputes Act</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Special provisions requiring prior government sanction for large firms (100+ workmen)</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-base">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Standard Bluebook Citation Block -->
+<div class="flex flex-col gap-1.5 pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Bluebook Citation (21st Ed.)</span>
+<span class="font-code-sm text-code-sm text-secondary font-medium">Standard Format</span>
+</div>
+<div class="relative bg-surface-container-low p-3 rounded-lg flex items-center justify-between gap-2">
+<code class="font-code-sm text-code-sm text-on-surface select-all leading-snug font-mono">
+                  Industrial Disputes Act, 1947, § 25F, No. 14, Acts of Parliament, 1947 (India).
+                </code>
+<button class="bg-surface-container-highest hover:bg-surface-container text-on-surface p-1.5 rounded transition-colors flex items-center justify-center flex-shrink-0" id="copy-citation-btn" title="Copy to clipboard">
+<span class="material-symbols-outlined text-base">copy_all</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Refinement & Source Authority Control Panel -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Corpus Authorities</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Indexed Layers</span>
+</div>
+<!-- Authority Checkboxes -->
+<div class="flex flex-col gap-space-xs">
+<label class="flex items-center gap-space-sm p-2 rounded hover:bg-surface-container-low transition-colors cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-secondary focus:ring-0 cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Official Government Gazettes</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Central acts, statutory instruments, rules</span>
+</div>
+</label>
+<label class="flex items-center gap-space-sm p-2 rounded hover:bg-surface-container-low transition-colors cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-secondary focus:ring-0 cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Supreme Court &amp; High Courts</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Appellate precedence and jurisdictional rulings</span>
+</div>
+</label>
+<label class="flex items-center gap-space-sm p-2 rounded hover:bg-surface-container-low transition-colors cursor-pointer">
+<input class="w-4 h-4 rounded text-secondary focus:ring-0 cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Regulatory Commissions</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ministry notifications, tribunals &amp; labor boards</span>
+</div>
+</label>
+<label class="flex items-center gap-space-sm p-2 rounded hover:bg-surface-container-low transition-colors cursor-pointer">
+<input class="w-4 h-4 rounded text-secondary focus:ring-0 cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Academic &amp; Secondary Treatises</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Law reviews, commentaries &amp; comparative guides</span>
+</div>
+</label>
+</div>
+<!-- Date Range Slider -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Enactment Span</span>
+<span class="font-code-sm text-code-sm bg-surface-container px-2 py-0.5 rounded text-on-surface font-medium">1950 – 2025</span>
+</div>
+<input class="w-full accent-secondary cursor-pointer" max="2025" min="1950" type="range" value="2020"/>
+<div class="flex items-center justify-between text-on-surface-variant font-code-sm text-code-sm">
+<span>1950</span>
+<span class="text-secondary font-semibold">Preset: Last 5 Years</span>
+<span>2025</span>
+</div>
+</div>
+<!-- Sub-Jurisdiction Scope Selector -->
+<div class="flex flex-col gap-1.5 pt-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">State / Regional Scope</span>
+<div class="flex flex-wrap gap-1.5">
+<button class="bg-secondary text-on-secondary px-2.5 py-1 rounded font-label-sm text-label-sm font-semibold">India (National)</button>
+<button class="bg-surface-container-low hover:bg-surface-container text-on-surface px-2.5 py-1 rounded font-label-sm text-label-sm">Maharashtra</button>
+<button class="bg-surface-container-low hover:bg-surface-container text-on-surface px-2.5 py-1 rounded font-label-sm text-label-sm">Delhi NCT</button>
+<button class="bg-surface-container-low hover:bg-surface-container text-on-surface px-2.5 py-1 rounded font-label-sm text-label-sm">Karnataka</button>
+<button class="bg-surface-container-low hover:bg-surface-container text-on-surface px-2.5 py-1 rounded font-label-sm text-label-sm">Tamil Nadu</button>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</div>
+<!-- Inline Script for Micro-Interactions: Copy Citation & Notification State -->
+<script>
+    (function() {
+      const copyBtn = document.getElementById('copy-citation-btn');
+      if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+          const text = "Industrial Disputes Act, 1947, § 25F, No. 14, Acts of Parliament, 1947 (India).";
+          navigator.clipboard.writeText(text).then(() => {
+            const icon = copyBtn.querySelector('.material-symbols-outlined');
+            if (icon) {
+              icon.textContent = 'check';
+              copyBtn.classList.add('bg-secondary', 'text-on-secondary');
+              setTimeout(() => {
+                icon.textContent = 'copy_all';
+                copyBtn.classList.remove('bg-secondary', 'text-on-secondary');
+              }, 2000);
+            }
+          });
+        });
+      }
+    })();
+  </script>
+</div></main></div>
+<script src="/js/app.js"></script>
+<script src="/js/research.js"></script>
+</body></html>

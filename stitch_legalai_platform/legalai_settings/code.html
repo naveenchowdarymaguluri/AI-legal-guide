@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed-dim":"#c3c0ff","error-container":"#ffdad6","outline-variant":"#c6c6cd","on-error":"#ffffff","on-primary-fixed-variant":"#3f465c","surface-container-low":"#eff4ff","on-secondary":"#ffffff","inverse-primary":"#bec6e0","primary-fixed":"#dae2fd","on-tertiary":"#ffffff","primary-fixed-dim":"#bec6e0","on-primary-fixed":"#131b2e","surface-tint":"#565e74","secondary":"#0051d5","surface-container-high":"#dce9ff","secondary-fixed-dim":"#b4c5ff","on-secondary-fixed-variant":"#003ea8","on-secondary-container":"#fefcff","primary":"#000000","on-tertiary-fixed-variant":"#3323cc","secondary-fixed":"#dbe1ff","primary-container":"#131b2e","on-error-container":"#93000a","on-primary":"#ffffff","surface-container":"#e5eeff","surface-container-highest":"#d3e4fe","inverse-surface":"#213145","surface-variant":"#d3e4fe","surface-dim":"#cbdbf5","secondary-container":"#316bf3","background":"#f8f9ff","tertiary":"#000000","inverse-on-surface":"#eaf1ff","on-tertiary-fixed":"#0f0069","surface-bright":"#f8f9ff","on-primary-container":"#7c839b","surface-container-lowest":"#ffffff","on-tertiary-container":"#7671ff","on-secondary-fixed":"#00174b","tertiary-container":"#0f0069","surface":"#f8f9ff","outline":"#76777d","on-surface":"#0b1c30","tertiary-fixed":"#e2dfff","on-surface-variant":"#45464d","on-background":"#0b1c30","error":"#ba1a1a"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-xl":"2rem","gutter":"1.5rem","space-md":"1rem","space-lg":"1.5rem","margin":"2rem","gutter-sm":"1rem","margin-sm":"1rem","space-sm":"0.5rem","space-xs":"0.25rem"},fontFamily:{"headline-md":["Geist"],"display-lg":["Geist"],"label-sm":["Geist"],"body-lg":["Inter"],"headline-lg":["Geist"],"body-md":["Inter"],"body-sm":["Inter"],"headline-sm":["Geist"],"code-sm":["JetBrains Mono"],"display-lg-mobile":["Geist"],"label-md":["Geist"]},fontSize:{"headline-md":["1.25rem",{lineHeight:"1.75rem",letterSpacing:"-0.015em",fontWeight:"600"}],"display-lg":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.03em",fontWeight:"600"}],"label-sm":["0.75rem",{lineHeight:"0.875rem",letterSpacing:"0.04em",fontWeight:"600"}],"body-lg":["1rem",{lineHeight:"1.625rem",letterSpacing:"-0.005em",fontWeight:"400"}],"headline-lg":["1.5rem",{lineHeight:"2rem",letterSpacing:"-0.02em",fontWeight:"600"}],"body-md":["0.875rem",{lineHeight:"1.5rem",letterSpacing:"0em",fontWeight:"400"}],"body-sm":["0.8125rem",{lineHeight:"1.375rem",letterSpacing:"0.005em",fontWeight:"400"}],"headline-sm":["1.125rem",{lineHeight:"1.5rem",letterSpacing:"-0.01em",fontWeight:"500"}],"code-sm":["0.75rem",{lineHeight:"1rem",letterSpacing:"-0.01em",fontWeight:"400"}],"display-lg-mobile":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.025em",fontWeight:"600"}],"label-md":["0.8125rem",{lineHeight:"1rem",letterSpacing:"0.01em",fontWeight:"500"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 bottom-0 w-64 bg-primary-container z-50 flex flex-col justify-between py-space-md"><div class="flex flex-col"><div class="px-space-md pb-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="LegalAI Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WJyjjwtFDHqN397HAeLRbHUIB_gJxKn1ytEQZCBObZ0y89MXwNjnrjuLk1PQzoy8edt_ujRhHw_3ILNVK5VdR6gIhSwGMliCkGYOkHFpjv3Dt-1jLI1Vz23gSVDtx7RIDd4Ws6j-fZj5WstcYpB3o_fWWS7J6YPo4Dy-t5EmeqFeK1W6kOyXCodoNkQ_em1w0D6qtbcGzM4ewV5vfN_jowGQXsIi5XT0JWn-R0Nsm8FVasVWNkNwk39nS4"/><span class="font-headline-sm text-headline-sm text-on-primary font-semibold tracking-tight">LegalAI</span></div><span class="font-code-sm text-code-sm px-space-xs py-0.5 rounded bg-surface-container-highest/20 text-on-primary-container">v2.4</span></div><div class="px-space-md py-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-primary-container">Workspace</span></div><nav class="flex flex-col gap-space-xs px-space-sm mt-space-xs" data-active-classes="bg-surface-container-highest/20 text-on-primary font-medium rounded-lg"><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="dashboard" href="#">Dashboard</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="assistant" href="#">AI Assistant</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="documents" href="#">Documents</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="research" href="#">Legal Research</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="compare" href="#">Compare</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="cases" href="#">Cases</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="drafts" href="#">Drafts</a></nav></div><div class="flex flex-col gap-space-xs px-space-sm"><nav class="flex flex-col gap-space-xs mb-space-sm" data-active-classes="bg-surface-container-highest/20 text-on-primary font-medium rounded-lg"><a aria-current="page" class="flex items-center px-space-sm py-space-sm transition-colors bg-surface-container-highest/20 text-on-primary font-medium rounded-lg" data-path="settings" href="#">Settings</a></nav><div class="pt-space-sm px-space-sm flex items-center justify-between bg-surface-container-highest/10 rounded-lg p-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="Elena Vance profile" class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1FUQjK8cFPlzpv7UYlZxPoZ-dcEBxSThB_UEaVFqxRMGpG6IpSz86i54g--Tv6r0Y4sWZ-EGtj-f7Dz7XXrD97YkCF__Chs4DetAt_2PudOgk2oRx53aIUZcluV2HxujrqRcjommNCd7M0fJ3orcbarNoYXdeDggQdij4XxJsApZuWLZy2dJ01lcJBCAod95Xa3h6dpj_lviqTYkzoaKod6003ctFV8LC7kD3Py8HgQDdqyYPlnVMlg"/><div class="flex flex-col truncate"><span class="font-label-md text-label-md text-on-primary truncate font-medium">Elena Vance, Esq.</span><span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-wider">Enterprise Plan</span></div></div><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer text-base">unfold_more</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 z-40 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="flex items-center w-full bg-surface-container-low rounded-lg px-space-sm py-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-lg mr-space-sm">search</span><span class="font-body-sm text-body-sm flex-1 text-on-surface-variant/70">Search documents, statutes, clauses...</span><span class="font-code-sm text-code-sm bg-surface-container-highest/60 text-on-surface px-space-xs py-0.5 rounded">⌘K</span></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded-full"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Verified Citation Engine Active</span></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1FUQjK8cFPlzpv7UYlZxPoZ-dcEBxSThB_UEaVFqxRMGpG6IpSz86i54g--Tv6r0Y4sWZ-EGtj-f7Dz7XXrD97YkCF__Chs4DetAt_2PudOgk2oRx53aIUZcluV2HxujrqRcjommNCd7M0fJ3orcbarNoYXdeDggQdij4XxJsApZuWLZy2dJ01lcJBCAod95Xa3h6dpj_lviqTYkzoaKod6003ctFV8LC7kD3Py8HgQDdqyYPlnVMlg"/></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glow in Header Backdrop -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-secondary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute -top-24 left-1/3 w-80 h-80 rounded-full bg-surface-container-highest/40 blur-2xl pointer-events-none"></div>
+<!-- Workspace Sub-Header & Breadcrumb Bar -->
+<div class="px-space-xl py-space-lg bg-surface-container-lowest shadow-sm">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span>LegalAI</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-on-surface font-medium">Account Settings</span>
+</div>
+<div class="flex items-center gap-space-sm mt-0.5">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">LegalAI Account &amp; Workspace Settings</h1>
+<span class="hidden sm:inline-flex items-center px-space-xs py-0.5 rounded text-code-sm font-code-sm bg-secondary-fixed text-on-secondary-fixed-variant">STABLE 2.4.8</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-xl shadow-sm self-start md:self-auto">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-ping"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium uppercase tracking-wider">Workspace Node</span>
+<span class="font-code-sm text-code-sm text-on-surface font-medium flex items-center gap-1">
+              Enterprise Workspace • Vance_Corp_Counsel_Vault
+              <span class="material-symbols-outlined text-sm text-secondary">verified_user</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification Banner (Save Context) -->
+<div class="hidden fixed bottom-8 right-8 z-50 bg-primary text-on-primary px-space-lg py-space-md rounded-xl shadow-xl flex items-center gap-space-md transition-all duration-300 transform translate-y-0" id="saveToast">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-on-primary">done_all</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-primary">Preferences Synchronized</span>
+<span class="font-body-sm text-body-sm text-on-primary-container">Changes securely committed to tenant vault.</span>
+</div>
+<button class="text-on-primary-container hover:text-on-primary ml-2" onclick="document.getElementById('saveToast').classList.add('hidden')">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<!-- Main Layout Grid: Master-Detail -->
+<div class="max-w-7xl mx-auto w-full px-space-xl py-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Left Column: Master Tab Navigation Sticky Rail -->
+<div class="lg:col-span-3 sticky top-24 space-y-space-md">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-sm space-y-1">
+<div class="px-space-md pt-space-xs pb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant/80 font-bold">Configuration Matrix</span>
+</div>
+<button class="tab-button w-full flex items-center justify-between px-space-md py-space-sm rounded-lg bg-surface-container-low text-secondary font-label-md text-label-md transition-all" id="tab-btn-profile" onclick="switchTab('profile')">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-base">account_circle</span>
+<span>Profile &amp; Account</span>
+</div>
+<span class="w-1.5 h-4 rounded-full bg-secondary"></span>
+</button>
+<button class="tab-button w-full flex items-center justify-between px-space-md py-space-sm rounded-lg hover:bg-surface-container-low text-on-surface-variant font-label-md text-label-md transition-all" id="tab-btn-preferences" onclick="switchTab('preferences')">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-base">tune</span>
+<span>Preferences &amp; Display</span>
+</div>
+<span class="w-1.5 h-4 rounded-full bg-transparent"></span>
+</button>
+<button class="tab-button w-full flex items-center justify-between px-space-md py-space-sm rounded-lg hover:bg-surface-container-low text-on-surface-variant font-label-md text-label-md transition-all" id="tab-btn-synthesis" onclick="switchTab('synthesis')">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-base">auto_awesome</span>
+<span>AI &amp; Synthesis Engine</span>
+</div>
+<span class="w-1.5 h-4 rounded-full bg-transparent"></span>
+</button>
+<button class="tab-button w-full flex items-center justify-between px-space-md py-space-sm rounded-lg hover:bg-surface-container-low text-on-surface-variant font-label-md text-label-md transition-all" id="tab-btn-retention" onclick="switchTab('retention')">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-base">folder_delete</span>
+<span>Data Retention</span>
+</div>
+<span class="w-1.5 h-4 rounded-full bg-transparent"></span>
+</button>
+<button class="tab-button w-full flex items-center justify-between px-space-md py-space-sm rounded-lg hover:bg-surface-container-low text-on-surface-variant font-label-md text-label-md transition-all" id="tab-btn-privacy" onclick="switchTab('privacy')">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-base">gavel</span>
+<span>Data Governance</span>
+</div>
+<span class="w-1.5 h-4 rounded-full bg-transparent"></span>
+</button>
+<button class="tab-button w-full flex items-center justify-between px-space-md py-space-sm rounded-lg hover:bg-surface-container-low text-on-surface-variant font-label-md text-label-md transition-all" id="tab-btn-security" onclick="switchTab('security')">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-base">shield_lock</span>
+<span>Security &amp; Access</span>
+</div>
+<span class="w-1.5 h-4 rounded-full bg-transparent"></span>
+</button>
+<button class="tab-button w-full flex items-center justify-between px-space-md py-space-sm rounded-lg hover:bg-surface-container-low text-on-surface-variant font-label-md text-label-md transition-all" id="tab-btn-notifications" onclick="switchTab('notifications')">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-base">notifications_active</span>
+<span>Notifications</span>
+</div>
+<span class="w-1.5 h-4 rounded-full bg-transparent"></span>
+</button>
+</div>
+<!-- Quick Status Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Statutory Compliance</span>
+<span class="flex items-center gap-1 text-code-sm font-code-sm text-secondary bg-surface-container-high px-1.5 py-0.5 rounded">ISO 27001</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">All statutory queries and redlines executed within zero-persistence memory buffers.</p>
+<div class="pt-space-xs flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">SOC2 Type II Attested</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Detail Content Area -->
+<div class="lg:col-span-9 space-y-space-xl">
+<!-- 1. PROFILE & ACCOUNT -->
+<div class="settings-tab-pane bg-surface-container-lowest rounded-xl p-space-xl shadow-sm space-y-space-lg" id="section-profile">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-md border-b-0">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Identity Record</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Legal Practitioner Profile</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Manage your attorney bar registration credentials and enterprise contact routing.</p>
+</div>
+<button class="self-start sm:self-auto bg-primary text-on-primary hover:bg-inverse-surface px-space-md py-space-sm rounded-lg font-label-md text-label-md flex items-center gap-space-xs shadow-sm transition" onclick="triggerSaveNotification()">
+<span class="material-symbols-outlined text-base">save</span>
+<span>Commit Changes</span>
+</button>
+</div>
+<!-- Avatar & Identity Upload -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-lg p-space-md bg-surface-container-low rounded-xl">
+<div class="relative group">
+<img alt="Elena Vance corporate headshot" class="w-24 h-24 rounded-full object-cover shadow-sm ring-4 ring-surface-container-lowest" src="https://lh3.googleusercontent.com/aida/AEtjO1UWqYFp7hgqeswe_AqVTT3r7yNOvKPUd_LLSEHojiOUtdMwaOZqpPN1SqMHh8rLJtxFDVXq1GmUatHCmrumFgxxaHkFQfcTeLWUY7AH3OixRcxG52cmjyGsCa1gCFMGzaTcAYQPd8BpcLqJ8EaKQn54d48qIIOnbwQXFoi7z82YoGjDaYVbyZVpasrtr4FRV3SEFMnvMmOkuYXz4QDTTnmbolgwgBlBsb-d1BXhv4TOglnpb-vtNMAnUTOS"/>
+<div class="absolute inset-0 rounded-full bg-primary/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined text-white">photo_camera</span>
+</div>
+</div>
+<div class="space-y-space-xs flex-1">
+<div class="flex items-center gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Elena Vance, Esq.</h3>
+<span class="font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed-variant px-space-xs py-0.5 rounded font-medium">Bar ID #CA-289410</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">High-resolution headshot used for collaborative contract sign-offs and memo headers.</p>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="bg-surface-container-lowest hover:bg-surface-container-high text-on-surface px-space-sm py-1 rounded text-label-sm font-label-sm shadow-sm transition flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">upload</span> Change Photo
+                </button>
+<button class="bg-surface-container-lowest hover:bg-error-container text-error px-space-sm py-1 rounded text-label-sm font-label-sm shadow-sm transition">
+                  Remove
+                </button>
+</div>
+</div>
+</div>
+<!-- Fields Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium flex items-center justify-between">
+<span>Legal Practitioner Full Name</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant/80">Required</span>
+</label>
+<input class="w-full bg-surface-container-low focus:bg-surface-container-lowest px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface outline-none focus:ring-2 focus:ring-secondary transition" type="text" value="Elena Vance"/>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium flex items-center justify-between">
+<span>Enterprise Work Email</span>
+<span class="font-code-sm text-code-sm text-secondary">SSO Verified</span>
+</label>
+<input class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-code-sm text-code-sm text-on-surface-variant cursor-not-allowed outline-none" readonly="" type="email" value="elena.vance@techcorp-legal.internal"/>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium">Professional Role &amp; Vault Privileges</label>
+<input class="w-full bg-surface-container-low focus:bg-surface-container-lowest px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface outline-none focus:ring-2 focus:ring-secondary transition" type="text" value="In-house Legal Counsel / Enterprise Admin"/>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium">Organization / Legal Advisory Entity</label>
+<input class="w-full bg-surface-container-low focus:bg-surface-container-lowest px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface outline-none focus:ring-2 focus:ring-secondary transition" type="text" value="TechCorp Global &amp; Legal Advisory"/>
+</div>
+</div>
+</div>
+<!-- 2. PREFERENCES & DISPLAY -->
+<div class="settings-tab-pane bg-surface-container-lowest rounded-xl p-space-xl shadow-sm space-y-space-lg" id="section-preferences">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Workspace Personalization</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Interface &amp; Drafting Language</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Calibrate default lexicography and reading themes for multi-jurisdiction analysis.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium">Interface Language &amp; Lexicon</label>
+<select class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface outline-none focus:ring-2 focus:ring-secondary">
+<option selected="">English (US / UK / IN - Common Law)</option>
+<option>Hindi (भारतीय कानूनी शब्दावली - High Courts)</option>
+<option>Spanish (Derecho Civil Continental)</option>
+<option>French (Code Civil des Français)</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium">Default Analysis Style</label>
+<select class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface outline-none focus:ring-2 focus:ring-secondary">
+<option>Concise &amp; Statutory (Clause by Clause)</option>
+<option selected="">Detailed Explanations with Landmark Precedents</option>
+<option>Plain-Language Executive Summary for Boardroom</option>
+</select>
+</div>
+</div>
+<!-- System Theme Selector -->
+<div class="space-y-space-xs pt-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-medium">System Visual Stratum (Theme)</label>
+<div class="grid grid-cols-3 gap-space-md pt-space-xs">
+<div class="p-space-md rounded-xl bg-surface-container-low ring-2 ring-secondary cursor-pointer flex flex-col items-center gap-space-xs text-center">
+<span class="material-symbols-outlined text-secondary text-2xl">light_mode</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Light (Crystalline)</span>
+<span class="font-code-sm text-code-sm text-secondary font-medium">Active Policy</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high transition cursor-pointer flex flex-col items-center gap-space-xs text-center opacity-60">
+<span class="material-symbols-outlined text-on-surface-variant text-2xl">dark_mode</span>
+<span class="font-label-md text-label-md font-medium text-on-surface">Dark (Nocturnal)</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">OLED Optimized</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high transition cursor-pointer flex flex-col items-center gap-space-xs text-center opacity-60">
+<span class="material-symbols-outlined text-on-surface-variant text-2xl">desktop_windows</span>
+<span class="font-label-md text-label-md font-medium text-on-surface">System Sync</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">OS Handshake</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. AI & SYNTHESIS ENGINE -->
+<div class="settings-tab-pane bg-surface-container-lowest rounded-xl p-space-xl shadow-sm space-y-space-lg" id="section-synthesis">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Cognitive Grounding</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">AI Synthesis &amp; Citation Parameters</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Regulate hallucination mitigation protocols and algorithmic precedent weights.</p>
+</div>
+<span class="self-start sm:self-auto px-space-sm py-1 rounded text-code-sm font-code-sm bg-surface-container-low text-secondary font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 0% Hallucination Target
+            </span>
+</div>
+<!-- Strict Grounding Toggle Card -->
+<div class="p-space-lg rounded-xl bg-gradient-to-r from-surface-container-low to-surface-container-lowest flex items-start justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-lg">verified</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Strict Statutory Grounding Threshold</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xl">
+                When enabled, the synthesis agent strictly rejects speculative extrapolation. Answers will cite codified acts or uploaded discovery PDFs directly, returning explicit disclaimer tags where authority is inconclusive.
+              </p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0 mt-1">
+<input checked="" class="sr-only peer" id="groundingToggle" type="checkbox"/>
+<div class="w-12 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Response Detail &amp; Statutory Verbatim</label>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Includes complete Bluebook citation strings, statutory subsection numbers, and pinpoint gazette links.</p>
+<div class="pt-space-xs">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded text-code-sm font-code-sm bg-surface-container-highest text-on-surface font-medium">HIGH DENSITY (Bluebook 21st Ed.)</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Citation Display Tagging Mode</label>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hover-expandable numerical badges with instant statutory clause peek overlays.</p>
+<div class="pt-space-xs flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-code-sm font-code-sm text-secondary font-bold">[1] Pinpoint Modal</span>
+<span class="text-body-sm text-on-surface-variant font-medium">Interactive Hover Enabled</span>
+</div>
+</div>
+</div>
+<!-- Jurisdiction Weighting -->
+<div class="space-y-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Primary Jurisdiction Weighting Matrix</label>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-wrap items-center gap-space-xs">
+<span class="px-space-sm py-1 bg-surface-container-lowest text-on-surface rounded-lg font-code-sm text-code-sm flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> India: Central Acts &amp; SC Judgments
+                <button class="hover:text-error ml-1"><span class="material-symbols-outlined text-xs">close</span></button>
+</span>
+<span class="px-space-sm py-1 bg-surface-container-lowest text-on-surface rounded-lg font-code-sm text-code-sm flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> California Labor Code &amp; 9th Cir.
+                <button class="hover:text-error ml-1"><span class="material-symbols-outlined text-xs">close</span></button>
+</span>
+<button class="px-space-sm py-1 bg-surface-container-high hover:bg-secondary-fixed text-secondary font-label-sm text-label-sm rounded-lg transition flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">add</span> Add Authority Corpus
+              </button>
+</div>
+</div>
+</div>
+<!-- 4. DOCUMENT & DATA RETENTION -->
+<div class="settings-tab-pane bg-surface-container-lowest rounded-xl p-space-xl shadow-sm space-y-space-lg" id="section-retention">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Lifecycle Policies</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Document Retention &amp; Automated Purge</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Automated disposal policies to fulfill enterprise discovery holds and GDPR/DPDP mandates.</p>
+</div>
+<!-- Retention Period Options -->
+<div class="space-y-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Default Case File Retention Period</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-space-xs">
+<label class="p-space-md rounded-xl bg-surface-container-low cursor-pointer flex flex-col items-center justify-center gap-1 text-center hover:bg-surface-container-high transition">
+<input class="accent-secondary mb-1" name="retentionPeriod" type="radio"/>
+<span class="font-label-md text-label-md font-semibold text-on-surface">30 Days</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Rolling Purge</span>
+</label>
+<label class="p-space-md rounded-xl bg-surface-container-low cursor-pointer flex flex-col items-center justify-center gap-1 text-center ring-2 ring-secondary">
+<input checked="" class="accent-secondary mb-1" name="retentionPeriod" type="radio"/>
+<span class="font-label-md text-label-md font-semibold text-on-surface">90 Days</span>
+<span class="font-code-sm text-code-sm text-secondary font-bold">Standard Vault</span>
+</label>
+<label class="p-space-md rounded-xl bg-surface-container-low cursor-pointer flex flex-col items-center justify-center gap-1 text-center hover:bg-surface-container-high transition">
+<input class="accent-secondary mb-1" name="retentionPeriod" type="radio"/>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Indefinite</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Legal Hold Active</span>
+</label>
+<label class="p-space-md rounded-xl bg-surface-container-low cursor-pointer flex flex-col items-center justify-center gap-1 text-center hover:bg-surface-container-high transition">
+<input class="accent-secondary mb-1" name="retentionPeriod" type="radio"/>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Ephemeral</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Session Flush</span>
+</label>
+</div>
+</div>
+<!-- Storage Telemetry -->
+<div class="p-space-lg rounded-xl bg-surface-container-low space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-base">pie_chart</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Encrypted Vault Consumption</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold">12.8 MB / 5.0 GB</span>
+</div>
+<!-- Progress Bar Indicator -->
+<div class="w-full bg-surface-container-highest rounded-full h-3 overflow-hidden">
+<div class="bg-secondary h-3 rounded-full transition-all duration-500" style="width: 2.56%;"></div>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant pt-1">
+<span>Tenant allocated volume: Tier 1 Enterprise</span>
+<span class="text-secondary font-medium">99.7% Capacity Available</span>
+</div>
+</div>
+<!-- Automated Redline Cleanup -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="space-y-0.5">
+<h4 class="font-label-md text-label-md text-on-surface font-semibold">Automated Redline Cleanup</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Automatically purge temporary comparison diffs and transient redline layers after 7 days.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+</div>
+<!-- 5. PRIVACY & DATA GOVERNANCE -->
+<div class="settings-tab-pane bg-surface-container-lowest rounded-xl p-space-xl shadow-sm space-y-space-lg" id="section-privacy">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Sovereignty &amp; Custody</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Privacy &amp; Data Governance</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Maintain sovereign ownership of matter files, export archives, or execute definitive tenant wiping.</p>
+</div>
+<!-- Positive Actions -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">inventory_2</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Data Dossier Export</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Compile an unencrypted JSON + PDF dossier of all uploaded case materials and citation verification logs.</p>
+</div>
+<button class="bg-surface-container-lowest hover:bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg font-label-md text-label-md flex items-center justify-center gap-space-xs shadow-sm transition" onclick="triggerSaveNotification()">
+<span class="material-symbols-outlined text-base">download</span>
+<span>Download Complete Archive</span>
+</button>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">cleaning_services</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Ephemeral Cache Flush</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Purge in-memory synthesis caches across active LLM inference endpoints without touching stored contracts.</p>
+</div>
+<button class="bg-surface-container-lowest hover:bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg font-label-md text-label-md flex items-center justify-center gap-space-xs shadow-sm transition" onclick="triggerSaveNotification()">
+<span class="material-symbols-outlined text-base">restart_alt</span>
+<span>Purge Synthesis Caches</span>
+</button>
+</div>
+</div>
+<!-- Destructive Actions Matrix -->
+<div class="space-y-space-md pt-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-error font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">warning</span> Destructive Vault Operations
+            </span>
+<!-- Delete Documents Card -->
+<div class="p-space-lg rounded-xl bg-error-container/30 flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="space-y-1">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Delete All Uploaded Documents</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Irrevocably scrubs all OCR records, contract extracts, and indexed vector embeddings.</p>
+</div>
+<button class="bg-surface-container-lowest hover:bg-error-container text-error px-space-md py-space-sm rounded-lg font-label-md text-label-md shadow-sm transition whitespace-nowrap" onclick="openModal('docsModal')">
+                Purge All Documents
+              </button>
+</div>
+<!-- Delete Workspace Card -->
+<div class="p-space-lg rounded-xl bg-error-container/60 flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="space-y-1">
+<h4 class="font-headline-sm text-headline-sm text-error font-bold">Delete Account &amp; Workspace</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Permanently destroys Elena Vance's enterprise profile, all linked cases, custom templates, drafts, and citation audit logs.</p>
+</div>
+<button class="bg-error text-on-error hover:opacity-90 px-space-md py-space-sm rounded-lg font-label-md text-label-md shadow-sm transition whitespace-nowrap" onclick="openModal('accountModal')">
+                Erase Entire Workspace
+              </button>
+</div>
+</div>
+</div>
+<!-- 6. SECURITY & ACCESS -->
+<div class="settings-tab-pane bg-surface-container-lowest rounded-xl p-space-xl shadow-sm space-y-space-lg" id="section-security">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Perimeter Defense</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Security &amp; Authentication</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Manage FIDO2 hardware keys, TOTP tokens, and terminate unverified perimeter sessions.</p>
+</div>
+<!-- Password & 2FA Split -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-md">
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Master Credentials</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Vault Password</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Last rotated 45 days ago. Minimum 16 characters with high entropy standard.</p>
+</div>
+<button class="self-start bg-surface-container-lowest hover:bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg font-label-md text-label-md shadow-sm transition">
+                Update Master Password
+              </button>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-secondary font-bold">Enforced Protocol</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Two-Factor Authentication (2FA)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Yubikey 5C NFC &amp; Authenticator TOTP enrolled. Zero-knowledge authentication active.</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-1 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-code-sm text-code-sm">TOTP &amp; Hardware Key</span>
+<button class="text-secondary font-label-sm text-label-sm hover:underline">Manage Keys</button>
+</div>
+</div>
+</div>
+<!-- Active Sessions List -->
+<div class="space-y-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Active Sovereign Sessions</h4>
+<button class="text-error hover:underline font-label-sm text-label-sm flex items-center gap-1" onclick="triggerSaveNotification()">
+<span class="material-symbols-outlined text-sm">logout</span> Terminate All Other Sessions
+              </button>
+</div>
+<div class="space-y-space-xs">
+<!-- Session 1: Current -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-secondary">laptop_mac</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Chrome on macOS Sequoia</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-1.5 py-0.2 rounded text-code-sm font-code-sm">Current Session</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bangalore, India • IP 203.0.113.88 (Encrypted Wireguard VPN)</span>
+</div>
+</div>
+<span class="font-code-sm text-code-sm text-secondary font-medium">Active Now</span>
+</div>
+<!-- Session 2: Mobile -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-on-surface-variant">phone_iphone</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-medium">Safari on iPhone 15 Pro Max</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">San Francisco, CA, USA • IP 198.51.100.42</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-code-sm text-code-sm text-on-surface-variant">2 hours ago</span>
+<button class="text-on-surface-variant hover:text-error">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 7. NOTIFICATION PREFERENCES -->
+<div class="settings-tab-pane bg-surface-container-lowest rounded-xl p-space-xl shadow-sm space-y-space-lg" id="section-notifications">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Intelligence Feeds</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Notification Preferences &amp; Dispatch Rules</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Regulate email dispatch cadence and real-time OCR telemetry announcements.</p>
+</div>
+<div class="space-y-space-md">
+<h4 class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Email Digest Protocols</h4>
+<div class="space-y-space-xs">
+<label class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between cursor-pointer">
+<div class="space-y-0.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Statutory Analysis Completion Notices</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Receive automated analytical dossiers once complex multi-statute queries finish syntheses.</p>
+</div>
+<input checked="" class="accent-secondary w-4 h-4" type="checkbox"/>
+</label>
+<label class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between cursor-pointer">
+<div class="space-y-0.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Critical Lease &amp; Contract Deadline Alerts</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dispatched 14 days, 7 days, and 24 hours prior to clause renewal obligations.</p>
+</div>
+<input checked="" class="accent-secondary w-4 h-4" type="checkbox"/>
+</label>
+<label class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between cursor-pointer">
+<div class="space-y-0.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Government Gazette Updates</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Daily digest of enacted amendments relevant to your pinned regulatory codes.</p>
+</div>
+<input class="accent-secondary w-4 h-4" type="checkbox"/>
+</label>
+</div>
+<h4 class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold pt-space-xs">In-App Live Alerts</h4>
+<div class="space-y-space-xs">
+<label class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between cursor-pointer">
+<div class="space-y-0.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Real-Time OCR Completion Telemetry</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Subtle toast notifications when uploaded evidentiary scans have finished tokenization.</p>
+</div>
+<input checked="" class="accent-secondary w-4 h-4" type="checkbox"/>
+</label>
+<label class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between cursor-pointer">
+<div class="space-y-0.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Redline Discrepancy Flags</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Flag immediate indemnity clause deviations when another collaborator pushes edits.</p>
+</div>
+<input checked="" class="accent-secondary w-4 h-4" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL: Confirmation for Purging Uploaded Documents -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-primary/40 backdrop-blur-sm p-space-md" id="docsModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-lg w-full p-space-xl shadow-2xl space-y-space-lg">
+<div class="flex items-center gap-space-sm text-error">
+<span class="material-symbols-outlined text-2xl">warning</span>
+<h3 class="font-headline-md text-headline-md font-bold">Irreversible Document Deletion</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        This action will permanently delete all uploaded case documents, discovery exhibits, and extracted clause caches. To confirm, type <strong class="text-on-surface font-code-sm">PURGE-ALL-DOCUMENTS</strong> below:
+      </p>
+<input class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-code-sm text-code-sm text-on-surface outline-none focus:ring-2 focus:ring-error" id="purgeInput" placeholder="PURGE-ALL-DOCUMENTS" type="text"/>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="bg-surface-container-low hover:bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg font-label-md text-label-md transition" onclick="closeModal('docsModal')">
+          Cancel
+        </button>
+<button class="bg-error text-on-error hover:opacity-90 px-space-md py-space-sm rounded-lg font-label-md text-label-md shadow-sm transition" onclick="executePurgeDocs()">
+          Confirm Purge
+        </button>
+</div>
+</div>
+</div>
+<!-- MODAL: Confirmation for Workspace Destruction -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-primary/40 backdrop-blur-sm p-space-md" id="accountModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-lg w-full p-space-xl shadow-2xl space-y-space-lg">
+<div class="flex items-center gap-space-sm text-error">
+<span class="material-symbols-outlined text-2xl">dangerous</span>
+<h3 class="font-headline-md text-headline-md font-bold">Workspace Termination</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        You are about to terminate the workspace <strong class="text-on-surface">Vance_Corp_Counsel_Vault</strong>. All associated legal briefs, Redlines, and user records for Elena Vance will be purged from all distributed storage.
+      </p>
+<div class="p-space-md bg-error-container/40 rounded-lg text-body-sm text-on-surface">
+<strong>Warning:</strong> Active billing for Enterprise Seat #8491 will cease at the end of the current billing cycle.
+      </div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="bg-surface-container-low hover:bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg font-label-md text-label-md transition" onclick="closeModal('accountModal')">
+          Cancel
+        </button>
+<button class="bg-error text-on-error hover:opacity-90 px-space-md py-space-sm rounded-lg font-label-md text-label-md shadow-sm transition" onclick="executeDestroyWorkspace()">
+          Permanently Destroy Workspace
+        </button>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Script -->
+<script>
+    function switchTab(sectionId) {
+      // Scroll to specific section in view smoothly
+      const element = document.getElementById('section-' + sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      // Update button visual styles
+      const buttons = document.querySelectorAll('.tab-button');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-surface-container-low', 'text-secondary');
+        btn.classList.add('text-on-surface-variant');
+        const indicator = btn.querySelector('span:last-child');
+        if (indicator) {
+          indicator.classList.remove('bg-secondary');
+          indicator.classList.add('bg-transparent');
+        }
+      });
+
+      const activeBtn = document.getElementById('tab-btn-' + sectionId);
+      if (activeBtn) {
+        activeBtn.classList.add('bg-surface-container-low', 'text-secondary');
+        activeBtn.classList.remove('text-on-surface-variant');
+        const indicator = activeBtn.querySelector('span:last-child');
+        if (indicator) {
+          indicator.classList.add('bg-secondary');
+          indicator.classList.remove('bg-transparent');
+        }
+      }
+    }
+
+    function triggerSaveNotification() {
+      const toast = document.getElementById('saveToast');
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 4000);
+    }
+
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+
+    function executePurgeDocs() {
+      const input = document.getElementById('purgeInput');
+      if (input.value === 'PURGE-ALL-DOCUMENTS') {
+        closeModal('docsModal');
+        triggerSaveNotification();
+        input.value = '';
+      } else {
+        alert('Please enter PURGE-ALL-DOCUMENTS exactly to confirm.');
+      }
+    }
+
+    function executeDestroyWorkspace() {
+      closeModal('accountModal');
+      triggerSaveNotification();
+    }
+  </script>
+</div></main></div></body></html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-fixed-variant":"#3f465c","outline":"#76777d","on-primary-container":"#7c839b","secondary-fixed-dim":"#b4c5ff","on-surface":"#0b1c30","surface-container-highest":"#d3e4fe","primary-container":"#131b2e","secondary":"#0051d5","on-primary-fixed":"#131b2e","on-background":"#0b1c30","outline-variant":"#c6c6cd","on-tertiary":"#ffffff","on-tertiary-fixed-variant":"#3323cc","error-container":"#ffdad6","surface-container-low":"#eff4ff","secondary-fixed":"#dbe1ff","on-secondary-fixed-variant":"#003ea8","inverse-surface":"#213145","tertiary":"#000000","on-tertiary-fixed":"#0f0069","primary":"#000000","on-tertiary-container":"#7671ff","on-secondary-fixed":"#00174b","surface-tint":"#565e74","surface-container":"#e5eeff","tertiary-fixed":"#e2dfff","primary-fixed-dim":"#bec6e0","surface-variant":"#d3e4fe","tertiary-fixed-dim":"#c3c0ff","secondary-container":"#316bf3","tertiary-container":"#0f0069","inverse-primary":"#bec6e0","surface-container-lowest":"#ffffff","primary-fixed":"#dae2fd","inverse-on-surface":"#eaf1ff","surface":"#f8f9ff","on-primary":"#ffffff","surface-dim":"#cbdbf5","on-surface-variant":"#45464d","on-secondary-container":"#fefcff","on-secondary":"#ffffff","on-error":"#ffffff","surface-container-high":"#dce9ff","background":"#f8f9ff","error":"#ba1a1a","on-error-container":"#93000a","surface-bright":"#f8f9ff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-md":"1rem","margin-sm":"1rem","margin":"2rem","space-xl":"2rem","space-xs":"0.25rem","gutter":"1.5rem","space-sm":"0.5rem","space-lg":"1.5rem","gutter-sm":"1rem"},fontFamily:{"headline-lg":["Geist"],"label-md":["Geist"],"body-lg":["Inter"],"code-sm":["JetBrains Mono"],"body-md":["Inter"],"display-lg":["Geist"],"headline-sm":["Geist"],"body-sm":["Inter"],"headline-md":["Geist"],"label-sm":["Geist"],"display-lg-mobile":["Geist"]},fontSize:{"headline-lg":["1.5rem",{lineHeight:"2rem",letterSpacing:"-0.02em",fontWeight:"600"}],"label-md":["0.8125rem",{lineHeight:"1rem",letterSpacing:"0.01em",fontWeight:"500"}],"body-lg":["1rem",{lineHeight:"1.625rem",letterSpacing:"-0.005em",fontWeight:"400"}],"code-sm":["0.75rem",{lineHeight:"1rem",letterSpacing:"-0.01em",fontWeight:"400"}],"body-md":["0.875rem",{lineHeight:"1.5rem",letterSpacing:"0em",fontWeight:"400"}],"display-lg":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.03em",fontWeight:"600"}],"headline-sm":["1.125rem",{lineHeight:"1.5rem",letterSpacing:"-0.01em",fontWeight:"500"}],"body-sm":["0.8125rem",{lineHeight:"1.375rem",letterSpacing:"0.005em",fontWeight:"400"}],"headline-md":["1.25rem",{lineHeight:"1.75rem",letterSpacing:"-0.015em",fontWeight:"600"}],"label-sm":["0.75rem",{lineHeight:"0.875rem",letterSpacing:"0.04em",fontWeight:"600"}],"display-lg-mobile":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.025em",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 bottom-0 w-64 bg-primary-container z-50 flex flex-col justify-between py-space-md"><div class="flex flex-col"><div class="px-space-md pb-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="LegalAI Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WJyjjwtFDHqN397HAeLRbHUIB_gJxKn1ytEQZCBObZ0y89MXwNjnrjuLk1PQzoy8edt_ujRhHw_3ILNVK5VdR6gIhSwGMliCkGYOkHFpjv3Dt-1jLI1Vz23gSVDtx7RIDd4Ws6j-fZj5WstcYpB3o_fWWS7J6YPo4Dy-t5EmeqFeK1W6kOyXCodoNkQ_em1w0D6qtbcGzM4ewV5vfN_jowGQXsIi5XT0JWn-R0Nsm8FVasVWNkNwk39nS4"/><span class="font-headline-sm text-headline-sm text-on-primary font-semibold tracking-tight">LegalAI</span></div><span class="font-code-sm text-code-sm px-space-xs py-0.5 rounded bg-surface-container-highest/20 text-on-primary-container">v2.4</span></div><div class="px-space-md py-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-primary-container">Workspace</span></div><nav class="flex flex-col gap-space-xs px-space-sm mt-space-xs" data-active-classes="bg-surface-container-highest/20 text-on-primary font-medium rounded-lg"><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="dashboard" href="#">Dashboard</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="ai-assistant" href="#">AI Assistant</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="documents" href="#">Documents</a><a class="flex items-center pl-space-lg pr-space-sm py-1.5 rounded-lg text-on-primary-container/80 hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-sm text-label-sm" data-path="document-analysis" href="#">Document Analysis</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="legal-research" href="#">Legal Research</a><a aria-current="page" class="flex items-center px-space-sm py-space-sm transition-colors bg-surface-container-highest/20 text-on-primary font-medium rounded-lg" data-path="compare" href="#">Compare</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="cases" href="#">Cases</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="drafts" href="#">Drafts</a></nav></div><div class="flex flex-col gap-space-xs px-space-sm"><nav class="flex flex-col gap-space-xs mb-space-sm" data-active-classes="bg-surface-container-highest/20 text-on-primary font-medium rounded-lg"><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="settings" href="#">Settings</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="documentation" href="#">Help &amp; Documentation</a></nav><div class="pt-space-sm px-space-sm flex items-center justify-between bg-surface-container-highest/10 rounded-lg p-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="Elena Vance profile" class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1FUQjK8cFPlzpv7UYlZxPoZ-dcEBxSThB_UEaVFqxRMGpG6IpSz86i54g--Tv6r0Y4sWZ-EGtj-f7Dz7XXrD97YkCF__Chs4DetAt_2PudOgk2oRx53aIUZcluV2HxujrqRcjommNCd7M0fJ3orcbarNoYXdeDggQdij4XxJsApZuWLZy2dJ01lcJBCAod95Xa3h6dpj_lviqTYkzoaKod6003ctFV8LC7kD3Py8HgQDdqyYPlnVMlg"/><div class="flex flex-col truncate"><span class="font-label-md text-label-md text-on-primary truncate font-medium">Elena Vance, Esq.</span><span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-wider">Enterprise Plan</span></div></div><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer text-base">unfold_more</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 z-40 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="flex items-center w-full bg-surface-container-low rounded-lg px-space-sm py-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-lg mr-space-sm">search</span><span class="font-body-sm text-body-sm flex-1 text-on-surface-variant/70">Search documents, statutes, clauses...</span><span class="font-code-sm text-code-sm bg-surface-container-highest/60 text-on-surface px-space-xs py-0.5 rounded">⌘K</span></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded-full"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Verified Citation Engine Active</span></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1FUQjK8cFPlzpv7UYlZxPoZ-dcEBxSThB_UEaVFqxRMGpG6IpSz86i54g--Tv6r0Y4sWZ-EGtj-f7Dz7XXrD97YkCF__Chs4DetAt_2PudOgk2oRx53aIUZcluV2HxujrqRcjommNCd7M0fJ3orcbarNoYXdeDggQdij4XxJsApZuWLZy2dJ01lcJBCAod95Xa3h6dpj_lviqTYkzoaKod6003ctFV8LC7kD3Py8HgQDdqyYPlnVMlg"/></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Top Command & Action Bar -->
+<div class="px-space-lg pt-space-md pb-space-lg border-b border-outline-variant/30 bg-surface-container-lowest/60">
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-secondary/10 text-secondary font-medium tracking-wide uppercase">Audit Engine v2.4</span>
+<span class="text-outline text-xs">•</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-mono">HASH: 8f9b...a12c</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight font-semibold">Compare Documents</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-3xl">
+          Understand what changed between two versions of a document with side-by-side diffing and AI-grounded legal explanation.
+        </p>
+</div>
+<!-- Action Suite -->
+<div class="flex items-center flex-wrap gap-space-sm self-start lg:self-auto">
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg font-label-md text-label-md transition-colors shadow-sm" id="btn-fullscreen">
+<span class="material-symbols-outlined text-base">fullscreen</span>
+<span>Switch to Fullscreen</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg font-label-md text-label-md transition-colors shadow-sm">
+<span class="material-symbols-outlined text-base">share</span>
+<span>Share Diff</span>
+</button>
+<div class="relative inline-block text-left">
+<button class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-on-primary hover:bg-primary-container rounded-lg font-label-md text-label-md transition-colors shadow-md">
+<span class="material-symbols-outlined text-base">download</span>
+<span>Export Comparison (PDF/DOCX)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="p-space-lg space-y-space-lg">
+<!-- Version Upload & Selection Architecture -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-outline-variant/30">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-center">
+<!-- Version A: Baseline -->
+<div class="lg:col-span-5 flex items-center gap-space-md p-3.5 rounded-lg bg-surface-container-low/60">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest/60 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-xl">description</span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-outline tracking-wider">Version 1 (Original)</span>
+<span class="font-code-sm text-code-sm px-1.5 py-0.2 bg-outline-variant/30 text-on-surface-variant rounded">Base</span>
+</div>
+<p class="font-label-md text-label-md font-semibold text-on-surface truncate">Employment_Agreement_v1.0_Draft.pdf</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant/80">Uploaded Sep 10, 2024 • 24 pages • 1.4 MB</p>
+</div>
+</div>
+<!-- Semantic Connector Pill -->
+<div class="lg:col-span-2 flex flex-col items-center justify-center text-center px-space-xs">
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary/10 text-secondary border border-secondary/20">
+<span class="material-symbols-outlined text-sm animate-spin" style="animation-duration: 8s;">sync_alt</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wide">Semantic Clause Alignment</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline mt-1 font-mono">Δ 2 Versions Active</span>
+</div>
+<!-- Version B: Revised -->
+<div class="lg:col-span-5 flex items-center justify-between gap-space-md p-3.5 rounded-lg bg-surface-container-low/60">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed/40 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-xl">history_edu</span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-secondary tracking-wider">Version 2 (Revised)</span>
+<span class="font-code-sm text-code-sm px-1.5 py-0.2 bg-secondary/15 text-secondary rounded font-medium">Final Exec</span>
+</div>
+<p class="font-label-md text-label-md font-semibold text-on-surface truncate">Employment_Agreement_v2.1_Final_Execution.pdf</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant/80">Uploaded Sep 21, 2024 • 26 pages • 1.6 MB</p>
+</div>
+</div>
+<button class="shrink-0 inline-flex items-center gap-1 px-3 py-1.5 bg-surface hover:bg-surface-container-highest/50 text-on-surface rounded-lg font-label-sm text-label-sm transition-colors border border-outline-variant/40 shadow-xs" title="Change target documents">
+<span class="material-symbols-outlined text-sm">swap_vert</span>
+<span class="hidden sm:inline">Change Files</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Visual Dashboard: Diff Topology & Highlights -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md">
+<!-- Section Metrics Bento -->
+<div class="xl:col-span-4 flex flex-col justify-between bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-outline-variant/30">
+<div>
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+<span class="font-label-md text-label-md font-semibold text-on-surface uppercase tracking-wider">Alignment Metrics</span>
+<span class="font-code-sm text-code-sm text-outline font-mono">100% PARSED</span>
+</div>
+<div class="my-space-md flex items-baseline justify-between">
+<div>
+<div class="font-display-lg text-display-lg font-bold text-on-surface tracking-tight">12</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Total Sections Compared</p>
+</div>
+<!-- Radial mini-meter preview -->
+<div class="flex items-center gap-2">
+<svg class="w-14 h-14 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="33, 100" stroke-width="3.5"></path>
+<path class="text-emerald-600" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="16, 100" stroke-dashoffset="-33" stroke-width="3.5"></path>
+<path class="text-rose-600" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="8, 100" stroke-dashoffset="-49" stroke-width="3.5"></path>
+</svg>
+<div class="font-code-sm text-code-sm text-on-surface-variant font-mono text-right">
+<div>58% Unchanged</div>
+<div class="text-secondary font-medium">42% Mutated</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-space-sm border-t border-outline-variant/20">
+<div class="px-2.5 py-2 rounded-lg bg-secondary/10 border border-secondary/20">
+<span class="font-code-sm text-code-sm text-secondary font-semibold block">4 Changed</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Modifications</span>
+</div>
+<div class="px-2.5 py-2 rounded-lg bg-emerald-50 border border-emerald-200">
+<span class="font-code-sm text-code-sm text-emerald-700 font-semibold block">2 Added</span>
+<span class="font-label-sm text-label-sm text-emerald-900/70">New clauses</span>
+</div>
+<div class="px-2.5 py-2 rounded-lg bg-rose-50 border border-rose-200">
+<span class="font-code-sm text-code-sm text-rose-700 font-semibold block">1 Removed</span>
+<span class="font-label-sm text-label-sm text-rose-900/70">Omitted</span>
+</div>
+</div>
+</div>
+<!-- Quick Metric Highlights (4 Dense Key Impact Nodes) -->
+<div class="xl:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<!-- Metric 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-outline-variant/30 flex flex-col justify-between shadow-sm hover:border-secondary/30 transition-all">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg">payments</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Salary &amp; Compensation</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-medium">+10% Base</span>
+</div>
+<div class="mt-3">
+<div class="font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight font-mono">
+              ₹50,000 <span class="text-outline-variant font-normal">→</span> <span class="text-emerald-700">₹55,000</span> <span class="text-on-surface-variant text-xs font-sans">/ mo</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Direct increase in gross monthly remuneration payable in arrears.</p>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-outline-variant/30 flex flex-col justify-between shadow-sm hover:border-secondary/30 transition-all">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-rose-600 text-lg">event_busy</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Notice Period</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 font-medium">2x Commitment</span>
+</div>
+<div class="mt-3">
+<div class="font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight font-mono">
+              30 days <span class="text-outline-variant font-normal">→</span> <span class="text-rose-700">60 days</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Substantial increase in departure lead-time required for voluntary exit.</p>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-outline-variant/30 flex flex-col justify-between shadow-sm hover:border-secondary/30 transition-all">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-600 text-lg">pending_actions</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Probation Duration</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 font-medium">+3 Months</span>
+</div>
+<div class="mt-3">
+<div class="font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight font-mono">
+              3 months <span class="text-outline-variant font-normal">→</span> <span class="text-amber-800">6 months</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Extended threshold prior to unconditional role confirmation.</p>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-outline-variant/30 flex flex-col justify-between shadow-sm hover:border-secondary/30 transition-all">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-rose-700 text-lg">lock</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Restrictive Covenants</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 font-medium">New Obligation</span>
+</div>
+<div class="mt-3">
+<div class="font-headline-sm text-headline-sm font-semibold text-rose-700 tracking-tight">
+              12-Month Non-Compete
+            </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Omitted in v1; strictly introduced in Section 14 across territorial zones.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Redline Filter & Inspection Toolbar -->
+<div class="flex items-center justify-between gap-space-md bg-surface-container-low/80 px-space-md py-space-sm rounded-lg border border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-outline tracking-wider mr-2">Filter Clause View:</span>
+<button class="px-3 py-1 bg-surface-container-lowest text-on-surface rounded font-label-sm text-label-sm font-medium shadow-xs border border-outline-variant/40">All Differences (4)</button>
+<button class="px-3 py-1 hover:bg-surface-container-lowest/50 text-on-surface-variant rounded font-label-sm text-label-sm font-medium transition-colors">Substantial Only (2)</button>
+<button class="px-3 py-1 hover:bg-surface-container-lowest/50 text-on-surface-variant rounded font-label-sm text-label-sm font-medium transition-colors">Financial Only (1)</button>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-code-sm text-code-sm text-on-surface-variant font-mono">Sync Scroll Active</span>
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded hover:bg-surface-container-highest/40" title="Collapse all sections">
+<span class="material-symbols-outlined text-base">unfold_less</span>
+</button>
+</div>
+</div>
+<!-- Detailed Comparison: Synchronized Three-Column Analytical Grid -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden">
+<!-- Grid Column Titles -->
+<div class="grid grid-cols-12 bg-surface-container-low border-b border-outline-variant/30 px-space-md py-3 text-on-surface font-label-sm text-label-sm font-semibold uppercase tracking-wider">
+<div class="col-span-12 lg:col-span-3">Section &amp; Clause Context</div>
+<div class="hidden lg:block lg:col-span-4 border-l border-outline-variant/20 pl-space-md">Version 1 (Original Draft)</div>
+<div class="hidden lg:block lg:col-span-5 border-l border-outline-variant/20 pl-space-md">Version 2 (Revised Execution)</div>
+</div>
+<!-- Row 1: Compensation -->
+<div class="grid grid-cols-12 border-b border-outline-variant/20 hover:bg-surface/50 transition-colors p-space-md gap-4 lg:gap-0">
+<!-- Section metadata column -->
+<div class="col-span-12 lg:col-span-3 pr-space-md">
+<div class="flex items-center justify-between mb-1">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Section 4</span>
+<span class="px-2 py-0.5 rounded text-xs font-medium bg-secondary/10 text-secondary border border-secondary/20">Modified</span>
+</div>
+<h4 class="font-label-md text-label-md font-medium text-on-surface">Compensation &amp; Payment Schedule</h4>
+<p class="font-code-sm text-code-sm text-outline mt-1 font-mono">Par. 4.1 • Line 88-92</p>
+<div class="mt-2 text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">insights</span>
+<span>+10% Fiscal variance</span>
+</div>
+</div>
+<!-- Version 1 Column -->
+<div class="col-span-12 sm:col-span-6 lg:col-span-4 lg:border-l border-outline-variant/20 lg:px-space-md bg-surface-container-low/20 lg:bg-transparent rounded-lg lg:rounded-none p-3 lg:p-0">
+<span class="lg:hidden text-xs font-semibold uppercase tracking-wider text-outline block mb-1">Version 1 (Original)</span>
+<div class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            4.1 The Employer shall pay Employee a monthly base salary of <del class="bg-rose-100 text-rose-800 px-1 py-0.5 rounded font-mono font-medium no-underline line-through decoration-rose-600">₹50,000</del> payable in arrears on the last business day of each calendar month, subject to standard statutory deductions and tax withholdings.
+          </div>
+</div>
+<!-- Version 2 Column -->
+<div class="col-span-12 sm:col-span-6 lg:col-span-5 lg:border-l border-outline-variant/20 lg:pl-space-md bg-emerald-50/10 lg:bg-transparent rounded-lg lg:rounded-none p-3 lg:p-0">
+<span class="lg:hidden text-xs font-semibold uppercase tracking-wider text-secondary block mb-1">Version 2 (Revised)</span>
+<div class="font-body-md text-body-md text-on-surface leading-relaxed">
+            4.1 The Employer shall pay Employee a monthly base salary of <ins class="bg-emerald-100 text-emerald-900 px-1.5 py-0.5 rounded font-mono font-medium no-underline">₹55,000</ins> payable in arrears on the last business day of each calendar month, subject to standard statutory deductions and tax withholdings.
+          </div>
+<div class="mt-2 text-xs text-emerald-800/80 flex items-center gap-1.5 font-sans">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+<span>Impact: Beneficial for Employee remuneration.</span>
+</div>
+</div>
+</div>
+<!-- Row 2: Termination & Notice Period -->
+<div class="grid grid-cols-12 border-b border-outline-variant/20 hover:bg-surface/50 transition-colors p-space-md gap-4 lg:gap-0">
+<!-- Section metadata column -->
+<div class="col-span-12 lg:col-span-3 pr-space-md">
+<div class="flex items-center justify-between mb-1">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Section 8</span>
+<span class="px-2 py-0.5 rounded text-xs font-medium bg-amber-100 text-amber-900 border border-amber-300">Modified (Substantial)</span>
+</div>
+<h4 class="font-label-md text-label-md font-medium text-on-surface">Termination &amp; Notice Period</h4>
+<p class="font-code-sm text-code-sm text-outline mt-1 font-mono">Par. 8.2 • Line 140-146</p>
+<div class="mt-2 text-xs text-rose-700 flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-sm">warning</span>
+<span>Restricts mobility</span>
+</div>
+</div>
+<!-- Version 1 Column -->
+<div class="col-span-12 sm:col-span-6 lg:col-span-4 lg:border-l border-outline-variant/20 lg:px-space-md bg-surface-container-low/20 lg:bg-transparent rounded-lg lg:rounded-none p-3 lg:p-0">
+<span class="lg:hidden text-xs font-semibold uppercase tracking-wider text-outline block mb-1">Version 1 (Original)</span>
+<div class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            8.2 Following successful completion of probation, either party may terminate employment by giving <del class="bg-rose-100 text-rose-800 px-1 py-0.5 rounded font-mono font-medium line-through">30 (thirty) days</del> prior written notice to the other party or salary in lieu thereof.
+          </div>
+</div>
+<!-- Version 2 Column -->
+<div class="col-span-12 sm:col-span-6 lg:col-span-5 lg:border-l border-outline-variant/20 lg:pl-space-md bg-rose-50/10 lg:bg-transparent rounded-lg lg:rounded-none p-3 lg:p-0">
+<span class="lg:hidden text-xs font-semibold uppercase tracking-wider text-secondary block mb-1">Version 2 (Revised)</span>
+<div class="font-body-md text-body-md text-on-surface leading-relaxed">
+            8.2 Following successful completion of probation, either party may terminate employment by giving <ins class="bg-emerald-100 text-emerald-900 px-1.5 py-0.5 rounded font-mono font-medium no-underline">60 (sixty) days</ins> prior written notice, <ins class="bg-emerald-100 text-emerald-900 px-1.5 py-0.5 rounded font-medium no-underline">subject to company discretion regarding garden leave</ins>.
+          </div>
+<div class="mt-2 text-xs text-rose-800/80 flex items-center gap-1.5 font-sans">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
+<span>Impact: Notice period doubled; employer adds discretionary garden leave control.</span>
+</div>
+</div>
+</div>
+<!-- Row 3: Probation Period -->
+<div class="grid grid-cols-12 border-b border-outline-variant/20 hover:bg-surface/50 transition-colors p-space-md gap-4 lg:gap-0">
+<!-- Section metadata column -->
+<div class="col-span-12 lg:col-span-3 pr-space-md">
+<div class="flex items-center justify-between mb-1">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Section 9</span>
+<span class="px-2 py-0.5 rounded text-xs font-medium bg-secondary/10 text-secondary border border-secondary/20">Modified</span>
+</div>
+<h4 class="font-label-md text-label-md font-medium text-on-surface">Probationary Period Threshold</h4>
+<p class="font-code-sm text-code-sm text-outline mt-1 font-mono">Par. 9.1 • Line 162-165</p>
+</div>
+<!-- Version 1 Column -->
+<div class="col-span-12 sm:col-span-6 lg:col-span-4 lg:border-l border-outline-variant/20 lg:px-space-md bg-surface-container-low/20 lg:bg-transparent rounded-lg lg:rounded-none p-3 lg:p-0">
+<span class="lg:hidden text-xs font-semibold uppercase tracking-wider text-outline block mb-1">Version 1 (Original)</span>
+<div class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            9.1 Employment shall be subject to an initial probation period of <del class="bg-rose-100 text-rose-800 px-1 py-0.5 rounded font-mono font-medium line-through">3 (three) months</del> from start date, during which confirmation review is administered.
+          </div>
+</div>
+<!-- Version 2 Column -->
+<div class="col-span-12 sm:col-span-6 lg:col-span-5 lg:border-l border-outline-variant/20 lg:pl-space-md rounded-lg lg:rounded-none p-3 lg:p-0">
+<span class="lg:hidden text-xs font-semibold uppercase tracking-wider text-secondary block mb-1">Version 2 (Revised)</span>
+<div class="font-body-md text-body-md text-on-surface leading-relaxed">
+            9.1 Employment shall be subject to an initial probation period of <ins class="bg-emerald-100 text-emerald-900 px-1.5 py-0.5 rounded font-mono font-medium no-underline">6 (six) months</ins> from start date, during which confirmation review is administered.
+          </div>
+<div class="mt-2 text-xs text-on-surface-variant flex items-center gap-1.5 font-sans">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span>Impact: Confirmation eligibility delayed by 90 additional calendar days.</span>
+</div>
+</div>
+</div>
+<!-- Row 4: Non-Compete [NEW SECTION] -->
+<div class="grid grid-cols-12 hover:bg-surface/50 transition-colors p-space-md gap-4 lg:gap-0 bg-emerald-50/20">
+<!-- Section metadata column -->
+<div class="col-span-12 lg:col-span-3 pr-space-md">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Section 14</span>
+<span class="font-code-sm text-code-sm px-1.5 py-0.5 bg-emerald-600 text-white rounded font-mono uppercase text-[10px]">New Clause</span>
+</div>
+<span class="px-2 py-0.5 rounded text-xs font-medium bg-emerald-100 text-emerald-900 border border-emerald-300">Added</span>
+</div>
+<h4 class="font-label-md text-label-md font-medium text-on-surface">Post-Employment Non-Compete</h4>
+<p class="font-code-sm text-code-sm text-outline mt-1 font-mono">Par. 14.1 - 14.3 • Line 210-234</p>
+<div class="mt-2 text-xs text-rose-700 flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-sm">gavel</span>
+<span>High legal scrutiny required</span>
+</div>
+</div>
+<!-- Version 1 Column -->
+<div class="col-span-12 sm:col-span-6 lg:col-span-4 lg:border-l border-outline-variant/20 lg:px-space-md bg-surface-container-low/40 rounded-lg lg:rounded-none p-3 lg:p-0 flex items-center">
+<span class="lg:hidden text-xs font-semibold uppercase tracking-wider text-outline block mb-1">Version 1 (Original)</span>
+<div class="font-body-sm text-body-sm text-outline italic">
+<span class="material-symbols-outlined text-sm inline-block align-middle mr-1">block</span>
+            No corresponding provision in Version 1 (Clause was completely omitted in previous draft).
+          </div>
+</div>
+<!-- Version 2 Column -->
+<div class="col-span-12 sm:col-span-6 lg:col-span-5 lg:border-l border-outline-variant/20 lg:pl-space-md rounded-lg lg:rounded-none p-3 lg:p-0">
+<span class="lg:hidden text-xs font-semibold uppercase tracking-wider text-secondary block mb-1">Version 2 (Revised)</span>
+<div class="font-body-md text-body-md text-emerald-950 bg-emerald-50/80 p-3 rounded-lg border border-emerald-200/80 leading-relaxed font-serif">
+            "Section 14.1: Employee covenants that for 12 months post-departure, Employee shall not engage directly or indirectly in competing business entities within the territorial jurisdiction of operation, nor solicit any existing client accounts."
+          </div>
+<div class="mt-2 text-xs text-rose-800 font-medium flex items-center gap-1.5 font-sans">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
+<span>Statutory Note: Post-employment covenants may face enforceability challenges under Indian Contract Act §27.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom AI Legal Explanation Panel (High Trust Epistemic Surface) -->
+<div class="rounded-xl border border-secondary/30 bg-gradient-to-b from-surface-container-lowest via-surface-container-lowest to-secondary-fixed/10 p-space-lg shadow-sm relative overflow-hidden">
+<div class="flex flex-col lg:flex-row lg:items-start justify-between gap-space-lg">
+<div class="space-y-space-sm flex-1">
+<!-- AI Badge Header -->
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary text-white font-label-sm text-label-sm font-semibold tracking-wide uppercase">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+              AI SYNTHESIS • NON-BINDING PREVIEW
+            </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+              Source-grounded synthesis
+            </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">
+            AI Legal Interpretation &amp; Impact Analysis
+          </h3>
+<!-- Primary Impact Synthesis -->
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed max-w-4xl">
+            The revised agreement increases the employee notice period from 30 to 60 days, extends the initial probation period to 6 months, and introduces a new 12-month post-employment non-compete restriction. While the monthly salary is increased by <span class="font-semibold text-emerald-800">₹5,000 (+10%)</span>, the contractual obligations on employee flexibility are significantly stricter in Version 2.
+          </p>
+<!-- Cautionary Note / Evidence Box -->
+<div class="flex items-start gap-2.5 p-3 rounded-lg bg-surface-container-low/70 border border-outline-variant/30 text-on-surface-variant max-w-4xl">
+<span class="material-symbols-outlined text-secondary shrink-0 text-lg">info</span>
+<div class="font-body-sm text-body-sm leading-normal">
+<strong class="font-semibold text-on-surface">Important Notice:</strong> AI-generated comparisons identify textual differences and syntactic variations. Review original source text before relying on this interpretation in formal legal negotiations or dispute proceedings.
+            </div>
+</div>
+</div>
+<!-- Sticky Quick Document Actions -->
+<div class="flex flex-col gap-2 shrink-0 lg:w-64 pt-2 lg:pt-0">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-outline tracking-wider mb-1">Document Actions</span>
+<button class="inline-flex items-center justify-between w-full px-3.5 py-2.5 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface border border-outline-variant/40 rounded-lg font-label-md text-label-md font-medium transition-colors shadow-xs">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base">visibility</span>
+<span>View Full Original</span>
+</span>
+<span class="font-code-sm text-code-sm text-outline">v1.0</span>
+</button>
+<button class="inline-flex items-center justify-between w-full px-3.5 py-2.5 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface border border-outline-variant/40 rounded-lg font-label-md text-label-md font-medium transition-colors shadow-xs">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base">visibility</span>
+<span>View Full Revised</span>
+</span>
+<span class="font-code-sm text-code-sm text-secondary font-medium">v2.1</span>
+</button>
+<button class="inline-flex items-center justify-center gap-2 w-full px-3.5 py-2.5 bg-primary text-on-primary hover:bg-primary-container rounded-lg font-label-md text-label-md font-medium transition-colors shadow-md mt-1">
+<span class="material-symbols-outlined text-base">picture_as_pdf</span>
+<span>Export Redline Report</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple Fullscreen & Micro-interaction support
+  const fullscreenBtn = document.getElementById('btn-fullscreen');
+  if (fullscreenBtn) {
+    fullscreenBtn.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+          console.log(`Error attempting to enable fullscreen: ${err.message}`);
+        });
+        fullscreenBtn.querySelector('span:last-child').textContent = 'Exit Fullscreen';
+      } else {
+        document.exitFullscreen();
+        fullscreenBtn.querySelector('span:last-child').textContent = 'Switch to Fullscreen';
+      }
+    });
+  }
+</script></main></div></body></html>

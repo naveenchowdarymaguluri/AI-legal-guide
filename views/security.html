@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed-dim":"#c3c0ff","error-container":"#ffdad6","outline-variant":"#c6c6cd","on-error":"#ffffff","on-primary-fixed-variant":"#3f465c","surface-container-low":"#eff4ff","on-secondary":"#ffffff","inverse-primary":"#bec6e0","primary-fixed":"#dae2fd","on-tertiary":"#ffffff","primary-fixed-dim":"#bec6e0","on-primary-fixed":"#131b2e","surface-tint":"#565e74","secondary":"#0051d5","surface-container-high":"#dce9ff","secondary-fixed-dim":"#b4c5ff","on-secondary-fixed-variant":"#003ea8","on-secondary-container":"#fefcff","primary":"#000000","on-tertiary-fixed-variant":"#3323cc","secondary-fixed":"#dbe1ff","primary-container":"#131b2e","on-error-container":"#93000a","on-primary":"#ffffff","surface-container":"#e5eeff","surface-container-highest":"#d3e4fe","inverse-surface":"#213145","surface-variant":"#d3e4fe","surface-dim":"#cbdbf5","secondary-container":"#316bf3","background":"#f8f9ff","tertiary":"#000000","inverse-on-surface":"#eaf1ff","on-tertiary-fixed":"#0f0069","surface-bright":"#f8f9ff","on-primary-container":"#7c839b","surface-container-lowest":"#ffffff","on-tertiary-container":"#7671ff","on-secondary-fixed":"#00174b","tertiary-container":"#0f0069","surface":"#f8f9ff","outline":"#76777d","on-surface":"#0b1c30","tertiary-fixed":"#e2dfff","on-surface-variant":"#45464d","on-background":"#0b1c30","error":"#ba1a1a"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-xl":"2rem","gutter":"1.5rem","space-md":"1rem","space-lg":"1.5rem","margin":"2rem","gutter-sm":"1rem","margin-sm":"1rem","space-sm":"0.5rem","space-xs":"0.25rem"},fontFamily:{"headline-md":["Geist"],"display-lg":["Geist"],"label-sm":["Geist"],"body-lg":["Inter"],"headline-lg":["Geist"],"body-md":["Inter"],"body-sm":["Inter"],"headline-sm":["Geist"],"code-sm":["JetBrains Mono"],"display-lg-mobile":["Geist"],"label-md":["Geist"]},fontSize:{"headline-md":["1.25rem",{lineHeight:"1.75rem",letterSpacing:"-0.015em",fontWeight:"600"}],"display-lg":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.03em",fontWeight:"600"}],"label-sm":["0.75rem",{lineHeight:"0.875rem",letterSpacing:"0.04em",fontWeight:"600"}],"body-lg":["1rem",{lineHeight:"1.625rem",letterSpacing:"-0.005em",fontWeight:"400"}],"headline-lg":["1.5rem",{lineHeight:"2rem",letterSpacing:"-0.02em",fontWeight:"600"}],"body-md":["0.875rem",{lineHeight:"1.5rem",letterSpacing:"0em",fontWeight:"400"}],"body-sm":["0.8125rem",{lineHeight:"1.375rem",letterSpacing:"0.005em",fontWeight:"400"}],"headline-sm":["1.125rem",{lineHeight:"1.5rem",letterSpacing:"-0.01em",fontWeight:"500"}],"code-sm":["0.75rem",{lineHeight:"1rem",letterSpacing:"-0.01em",fontWeight:"400"}],"display-lg-mobile":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.025em",fontWeight:"600"}],"label-md":["0.8125rem",{lineHeight:"1rem",letterSpacing:"0.01em",fontWeight:"500"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-7xl mx-auto px-margin flex items-center justify-between gap-gutter"><a href="/dashboard" class="flex items-center gap-space-md hover:opacity-90 transition-opacity"><img alt="LegalAI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WJyjjwtFDHqN397HAeLRbHUIB_gJxKn1ytEQZCBObZ0y89MXwNjnrjuLk1PQzoy8edt_ujRhHw_3ILNVK5VdR6gIhSwGMliCkGYOkHFpjv3Dt-1jLI1Vz23gSVDtx7RIDd4Ws6j-fZj5WstcYpB3o_fWWS7J6YPo4Dy-t5EmeqFeK1W6kOyXCodoNkQ_em1w0D6qtbcGzM4ewV5vfN_jowGQXsIi5XT0JWn-R0Nsm8FVasVWNkNwk39nS4"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">LegalAI</span></div><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-on-surface font-semibold"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="" href="#">Home</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="how-it-works" href="#">How It Works</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="security-and-privacy" href="#">Security &amp; Privacy</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="features" href="#">Features</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="pricing" href="#">Pricing</a></nav><div class="flex items-center gap-space-md"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="signin" href="#">Sign In</a><a class="inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md px-space-md py-space-sm rounded-lg hover:bg-primary-container transition-colors" data-path="get-started" href="#">Get Started</a><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1FUQjK8cFPlzpv7UYlZxPoZ-dcEBxSThB_UEaVFqxRMGpG6IpSz86i54g--Tv6r0Y4sWZ-EGtj-f7Dz7XXrD97YkCF__Chs4DetAt_2PudOgk2oRx53aIUZcluV2HxujrqRcjommNCd7M0fJ3orcbarNoYXdeDggQdij4XxJsApZuWLZy2dJ01lcJBCAod95Xa3h6dpj_lviqTYkzoaKod6003ctFV8LC7kD3Py8HgQDdqyYPlnVMlg"/></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<section class="relative w-full overflow-hidden bg-surface py-space-xl md:py-24">
+<div class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_50%_at_50%_-10%,rgba(0,81,213,0.08),transparent)]"></div>
+<div class="max-w-7xl mx-auto px-margin relative z-10">
+<div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+<!-- Eyebrow Pill -->
+<div class="inline-flex items-center gap-space-xs bg-surface-container px-space-md py-1.5 rounded-full shadow-sm mb-space-lg">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">SOVEREIGNTY, PRIVACY &amp; PERIMETER DEFENSE</span>
+</div>
+<!-- Headline & Subtitle -->
+<h1 class="font-display-lg text-display-lg text-on-surface mb-space-md tracking-tight">
+          Privacy is part of the product.
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-space-xl">
+          Legal documents contain sensitive fiduciary, proprietary, and personal data. LegalAI is engineered from the ground up with ephemeral memory, client-side encryption, and strict zero-training boundaries.
+        </p>
+<!-- Trust Badges Strip -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-wrap items-center justify-center gap-y-3 gap-x-6 text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-lg">verified_user</span>
+<span>SOC-2 Type II Certified</span>
+</div>
+<span class="hidden sm:inline text-outline-variant font-code-sm text-code-sm">•</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-lg">lock</span>
+<span>256-bit AES GCM</span>
+</div>
+<span class="hidden sm:inline text-outline-variant font-code-sm text-code-sm">•</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-lg">memory</span>
+<span>Zero Model Retention</span>
+</div>
+<span class="hidden sm:inline text-outline-variant font-code-sm text-code-sm">•</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-lg">security</span>
+<span>ISO/IEC 27001</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 1: Document Security & Enclave Isolation -->
+<section class="w-full bg-surface-container-low py-space-xl">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+<div>
+<span class="font-code-sm text-code-sm uppercase tracking-widest text-secondary font-medium">ENCLAVE ARCHITECTURE</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Document Security &amp; Enclave Isolation</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Hardware-enforced boundaries guarantee your evidentiary records remain strictly isolated from both cross-tenant vectors and cloud orchestrators.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary mb-space-md">
+<span class="material-symbols-outlined">key</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Client-Side Encryption</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md">
+              AES-256 GCM cryptographic keys are provisioned uniquely per tenant vault. Keys are derived on the client or via your own external KMS, rendering raw payloads indecipherable to LegalAI staff.
+            </p>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded font-code-sm text-code-sm text-on-surface-variant flex items-center justify-between">
+<span>VAULT CIPHER</span>
+<span class="font-medium text-secondary">AES-GCM-256-AEAD</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary mb-space-md">
+<span class="material-symbols-outlined">dns</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Isolated Private Storage</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md">
+              Legal materials reside in mathematically partitioned object layers. Every document is bound to an immutable cryptographically authenticated namespace with strict micro-segmentation.
+            </p>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded font-code-sm text-code-sm text-on-surface-variant flex items-center justify-between">
+<span>PERIMETER STATE</span>
+<span class="font-medium text-secondary">AIRGAPPED TENANCY</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary mb-space-md">
+<span class="material-symbols-outlined">memory_alt</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Ephemeral Execution</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md">
+              Cloud inference pods execute strictly in microVM environments with volatile RAM. Upon query dispatch completion and citation anchoring, the sandbox memory space is sanitized with multi-pass zeroing.
+            </p>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded font-code-sm text-code-sm text-on-surface-variant flex items-center justify-between">
+<span>RETENTION TIME</span>
+<span class="font-medium text-secondary">0.000s RESIDUAL</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Data Processing Lifecycle (Interactive Audit Diagram) -->
+<section class="w-full bg-surface py-space-xl">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-code-sm text-code-sm uppercase tracking-widest text-secondary font-medium">STEP-BY-STEP VERIFICATION</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Data Processing Lifecycle</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+          An inspectable, deterministic sequence governing every uploaded document from initial ingress to volatile query resolution.
+        </p>
+</div>
+<!-- Lifecycle Diagram Cards with Timeline Flow -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter relative">
+<!-- Step 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm relative flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-secondary font-medium">01 // INGRESS</span>
+<span class="material-symbols-outlined text-outline-variant text-lg">sync_alt</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Ingestion</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Payload enters over strictly enforced TLS 1.3 tunnels with forward secrecy. Instant SHA-256 checksum stamping and tenant tokenization execute prior to payload disk write.
+            </p>
+</div>
+<div class="border-t border-surface-container pt-space-xs font-code-sm text-code-sm text-outline flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>TLS 1.3 / HSTS Sealed</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm relative flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-secondary font-medium">02 // EXTRACTION</span>
+<span class="material-symbols-outlined text-outline-variant text-lg">document_scanner</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Parsing</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              OCR, document layout analysis, and clause segregation execute inside single-use isolated micro-sandboxes devoid of external network access.
+            </p>
+</div>
+<div class="border-t border-surface-container pt-space-xs font-code-sm text-code-sm text-outline flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Ephemeral MicroVM</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm relative flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-secondary font-medium">03 // ISOLATION</span>
+<span class="material-symbols-outlined text-outline-variant text-lg">hub</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Indexing</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Semantic embeddings are generated and segregated into tenant-keyed vector partitions. Tokens require per-request authenticated RBAC authorizations to dereference.
+            </p>
+</div>
+<div class="border-t border-surface-container pt-space-xs font-code-sm text-code-sm text-outline flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Customer-Keyed RBAC</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm relative flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-secondary font-medium">04 // SYNTHESIS</span>
+<span class="material-symbols-outlined text-outline-variant text-lg">auto_awesome</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Query Execution</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Answers synthesize in volatile working memory. Once statutory citations and summaries are delivered to the client, the processing context is fully flushed.
+            </p>
+</div>
+<div class="border-t border-surface-container pt-space-xs font-code-sm text-code-sm text-outline flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Zero Persistent Log</span>
+</div>
+</div>
+</div>
+<!-- Live Audit Stream Preview -->
+<div class="mt-space-lg bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-code-sm text-code-sm text-on-surface font-medium">TELEMETRY PROOF MATRIX</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Live Tenant Sandbox Verification Feed</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-md font-code-sm text-code-sm">
+<div class="bg-surface-container-low p-space-sm rounded">
+<span class="text-outline block mb-0.5">TLS HANDSHAKE ENCLAVE</span>
+<span class="text-on-surface font-medium">ECDHE-RSA-AES256-GCM-SHA384</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded">
+<span class="text-outline block mb-0.5">LOG PERSISTENCE POLICY</span>
+<span class="text-secondary font-medium">STRICT NO-PROMPT RETENTION</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded">
+<span class="text-outline block mb-0.5">MEMORY SCRUB TEST</span>
+<span class="text-on-surface font-medium">PASSED (0 B RESIDUAL HEAP)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: AI Processing & Zero-Training Guarantee -->
+<section class="w-full bg-surface-container-low py-space-xl">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg md:p-space-xl shadow-md">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<div class="lg:col-span-7">
+<div class="inline-flex items-center gap-space-xs bg-surface-container-high text-secondary font-label-sm text-label-sm px-2.5 py-1 rounded mb-space-sm">
+<span class="material-symbols-outlined text-sm">shield</span>
+<span>CONTRACTUAL COMMITMENT</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-md tracking-tight">
+              Strict Contractual Zero-Training Guarantee
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+              We provide an uncompromising, legally binding promise: user-uploaded contracts, briefs, court transcripts, notes, and prompts are <strong class="text-on-surface font-semibold">NEVER</strong> used to train, retrain, or fine-tune foundational AI models, proprietary weights, or third-party architectures.
+            </p>
+<div class="space-y-space-sm mb-space-lg">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-xl mt-0.5">verified</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-semibold">Zero-Data-Retention (ZDR) SLA</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Model provider APIs operate under bespoke enterprise agreements forbidding secondary caching, continuous logging, or offline evaluation.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-xl mt-0.5">verified</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-semibold">Statutory Attestation &amp; Audit Access</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">General Counsel and Chief Compliance Officers can request third-party compliance verification letters and SOC-2 Type II audit packs at any interval.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-md">
+<a class="inline-flex items-center gap-space-xs bg-primary text-on-primary font-label-md text-label-md px-space-md py-space-sm rounded-lg hover:bg-primary-container transition-colors shadow-sm" href="#">
+<span class="material-symbols-outlined text-base">download</span>
+<span>Download DPA &amp; Zero-Training Addendum</span>
+</a>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Ref: SEC-DPA-2025-V4</span>
+</div>
+</div>
+<!-- Graphic Callout -->
+<div class="lg:col-span-5 bg-surface-container rounded-xl p-space-lg">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container-high mb-space-md">
+<span class="font-code-sm text-code-sm text-on-surface font-semibold uppercase">Enclave Pipeline Seal</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-lowest text-secondary font-medium">ISOLATED</span>
+</div>
+<div class="space-y-space-sm font-code-sm text-code-sm">
+<div class="bg-surface-container-lowest p-space-sm rounded flex items-center justify-between">
+<span class="text-on-surface-variant">Prompt Cache</span>
+<span class="text-on-surface font-medium">Bypassed (0-second TTL)</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded flex items-center justify-between">
+<span class="text-on-surface-variant">Model Feedback Loop</span>
+<span class="text-error font-medium">HARD DISABLED</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded flex items-center justify-between">
+<span class="text-on-surface-variant">Weights Modification</span>
+<span class="text-secondary font-medium">RESTRICTED / STATIC</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded flex items-center justify-between">
+<span class="text-on-surface-variant">Corpus Contamination Risk</span>
+<span class="text-secondary font-medium">0.00% (Cryptographic Proof)</span>
+</div>
+</div>
+<div class="mt-space-md p-space-sm rounded bg-surface-container-high/60 text-on-surface-variant font-body-sm text-body-sm">
+              "Under no circumstance does client data persist past the operational lifespan of the analysis request."
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: User Sovereign Control -->
+<section class="w-full bg-surface py-space-xl">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="max-w-2xl mb-space-xl">
+<span class="font-code-sm text-code-sm uppercase tracking-widest text-secondary font-medium">UNILATERAL AUTHORITY</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">User Sovereign Control</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+          Law firms and enterprises retain absolute ownership. We supply native controls empowering administrators to monitor, purge, or extract every single data particle.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Control 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-9 h-9 rounded bg-surface-container flex items-center justify-center text-on-surface mb-space-md">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">View Documents</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md">
+              Granular real-time access logs showing every single read, search query, vector indexing check, and OCR parsing operation performed by any team member.
+            </p>
+</div>
+<a class="font-label-md text-label-md text-secondary hover:underline inline-flex items-center gap-1" href="#">
+<span>Explore Access Ledger</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Control 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-9 h-9 rounded bg-surface-container flex items-center justify-center text-on-surface mb-space-md">
+<span class="material-symbols-outlined">delete_forever</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Delete Documents</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md">
+              Cryptographic erasure permanently destroys raw documents, embedded vectors, semantic indices, and cache tokens across all storage nodes.
+            </p>
+</div>
+<a class="font-label-md text-label-md text-secondary hover:underline inline-flex items-center gap-1" href="#">
+<span>Erasure Protocols</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Control 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-9 h-9 rounded bg-surface-container flex items-center justify-center text-on-surface mb-space-md">
+<span class="material-symbols-outlined">download</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Export Information</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md">
+              Generate a complete, structured export dossier (JSON, CSV, PDF) encompassing original source material, synthesis histories, and complete audit journals.
+            </p>
+</div>
+<a class="font-label-md text-label-md text-secondary hover:underline inline-flex items-center gap-1" href="#">
+<span>Dossier Generator</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Control 4 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-9 h-9 rounded bg-surface-container flex items-center justify-center text-on-surface mb-space-md">
+<span class="material-symbols-outlined">manage_accounts</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Manage Account</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md">
+              Immediate, self-service account termination. Initiating closure triggers automated key destruction, leaving zero recoverable traces across the infrastructure.
+            </p>
+</div>
+<a class="font-label-md text-label-md text-secondary hover:underline inline-flex items-center gap-1" href="#">
+<span>Tenant Deletion Hub</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: Security Practices & Compliance Badges -->
+<section class="w-full bg-surface-container-low py-space-xl">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-code-sm text-code-sm uppercase tracking-widest text-secondary font-medium">COMPREHENSIVE GOVERNANCE</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Security Practices &amp; Compliance Standards</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+          Designed to exceed the requirements of global financial institutions, AmLaw 100 firms, and healthcare compliance frameworks.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-space-md">
+<!-- Practice 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-secondary text-2xl mb-space-xs">enhanced_encryption</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">Encryption</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              AES-256 at rest, TLS 1.3 in transit with Perfect Forward Secrecy across every internal API microservice.
+            </p>
+</div>
+<span class="font-code-sm text-code-sm text-secondary mt-space-sm pt-space-xs border-t border-surface-container block font-medium">256-BIT LEVEL</span>
+</div>
+<!-- Practice 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-secondary text-2xl mb-space-xs">badge</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">Access Control</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Zero-standing privileges. Granular RBAC, ABAC, and strict segregation between production data and internal developers.
+            </p>
+</div>
+<span class="font-code-sm text-code-sm text-secondary mt-space-sm pt-space-xs border-t border-surface-container block font-medium">LEAST PRIVILEGE</span>
+</div>
+<!-- Practice 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-secondary text-2xl mb-space-xs">fingerprint</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">Authentication</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              FIDO2 WebAuthn hardware keys, mandatory TOTP 2FA, Okta, Azure AD, and SAML 2.0 biometric SSO support.
+            </p>
+</div>
+<span class="font-code-sm text-code-sm text-secondary mt-space-sm pt-space-xs border-t border-surface-container block font-medium">MFA / FIDO2</span>
+</div>
+<!-- Practice 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-secondary text-2xl mb-space-xs">history_edu</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">Audit Logging</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              RFC 3161 compliant timestamped immutable audit ledgers streamed to customer SIEM instances via Webhooks.
+            </p>
+</div>
+<span class="font-code-sm text-code-sm text-secondary mt-space-sm pt-space-xs border-t border-surface-container block font-medium">IMMUTABLE LOGS</span>
+</div>
+<!-- Practice 5 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-secondary text-2xl mb-space-xs">bug_report</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">Vulnerability Defense</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Continuous automated SAST/DAST pipelines paired with ongoing third-party black-box penetration audits and bug bounties.
+            </p>
+</div>
+<span class="font-code-sm text-code-sm text-secondary mt-space-sm pt-space-xs border-t border-surface-container block font-medium">PEN-TESTED 24/7</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: Transparency: What We Can and Cannot Guarantee -->
+<section class="w-full bg-surface py-space-xl">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="max-w-3xl mb-space-xl">
+<span class="font-code-sm text-code-sm uppercase tracking-widest text-secondary font-medium">UNAMBIGUOUS CLARITY</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Transparency: What We Can and Cannot Guarantee</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+          Intellectual integrity demands explicit delineation. We believe that overstating AI capabilities is an ethical violation in jurisprudence.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Column A: Guarantees -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border-t-4 border-t-secondary flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-xs mb-space-md">
+<span class="material-symbols-outlined text-secondary text-2xl">check_circle</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">What We Guarantee</h3>
+</div>
+<ul class="space-y-space-md font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-space-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0"></span>
+<span><strong class="text-on-surface font-semibold">100% Ephemeral Inference Enclaves:</strong> Your data is evaluated solely in isolated RAM segments and wiped upon session close.</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0"></span>
+<span><strong class="text-on-surface font-semibold">Zero Training on Private Inputs:</strong> User documents, search syntax, and annotations are permanently ring-fenced from model weights.</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0"></span>
+<span><strong class="text-on-surface font-semibold">Instant User-Directed Deletion:</strong> Clicking delete prompts true cryptographic erasure across every replica and vector store.</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0"></span>
+<span><strong class="text-on-surface font-semibold">Cryptographic Citation Provenance:</strong> Every synthesis statement cites the verifiable excerpt or statute reference with zero hallucinated authorities.</span>
+</li>
+</ul>
+</div>
+<div class="mt-space-lg p-space-sm rounded bg-surface-container font-code-sm text-code-sm text-secondary font-medium">
+            STATUS: ENFORCED VIA INFRASTRUCTURE CODE
+          </div>
+</div>
+<!-- Column B: What We Cannot Guarantee -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border-t-4 border-t-outline flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-xs mb-space-md">
+<span class="material-symbols-outlined text-outline text-2xl">info</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">What We Cannot Guarantee</h3>
+</div>
+<ul class="space-y-space-md font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-space-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-outline mt-2 shrink-0"></span>
+<span><strong class="text-on-surface font-semibold">Local Device Immune Defense:</strong> We cannot protect document security if an endpoint, browser extension, or client computer is compromised.</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-outline mt-2 shrink-0"></span>
+<span><strong class="text-on-surface font-semibold">Courtroom Enforceability:</strong> Jurisdictional outcomes and contractual validity hinge upon individual judicial rulings and sovereign legislation.</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-outline mt-2 shrink-0"></span>
+<span><strong class="text-on-surface font-semibold">Replacement of Qualified Counsel:</strong> LegalAI is an analytical intelligence platform designed to augment, not supplant, qualified attorney review and judgment.</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-outline mt-2 shrink-0"></span>
+<span><strong class="text-on-surface font-semibold">Compromised Shared Credentials:</strong> Failure to enforce client-side MFA or using shared credentials compromises tenant isolation at the user tier.</span>
+</li>
+</ul>
+</div>
+<div class="mt-space-lg p-space-sm rounded bg-surface-container font-code-sm text-code-sm text-on-surface-variant font-medium">
+            NOTICE: LEGAL PRACTICE ACT COMPLIANCE
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER TRUST & RESOURCE LINKS -->
+<section class="w-full bg-surface-container-low py-space-xl border-t border-surface-container">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">
+            Looking for comprehensive documentation?
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Access our technical Whitepaper, request SOC-2 artifacts, or trigger verification audits.
+          </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<a class="inline-flex items-center gap-1 bg-surface-container text-on-surface font-label-md text-label-md px-space-md py-space-sm rounded-lg hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">article</span>
+<span>Security Whitepaper</span>
+</a>
+<a class="inline-flex items-center gap-1 bg-surface-container text-on-surface font-label-md text-label-md px-space-md py-space-sm rounded-lg hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">gavel</span>
+<span>Privacy Policy</span>
+</a>
+<a class="inline-flex items-center gap-1 bg-surface-container text-on-surface font-label-md text-label-md px-space-md py-space-sm rounded-lg hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">receipt_long</span>
+<span>Terms of Service</span>
+</a>
+<a class="inline-flex items-center gap-1 bg-surface-container text-on-surface font-label-md text-label-md px-space-md py-space-sm rounded-lg hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">person_remove</span>
+<span>Data Deletion Portal</span>
+</a>
+</div>
+</div>
+<div class="mt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-code-sm text-code-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-base">emergency</span>
+<span>Security Incident Response Desk:</span>
+<a class="text-secondary font-medium hover:underline" href="mailto:security@legalai.internal">security@legalai.internal</a>
+</div>
+<div>
+<span>PGP Key Fingerprint: 4E91 B21F A309 88DC E904</span>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_-1px_4px_rgba(0,0,0,0.02)] pt-space-xl pb-space-lg"><div class="max-w-7xl mx-auto px-margin"><div class="grid grid-cols-2 md:grid-cols-5 gap-gutter mb-space-xl"><div class="col-span-2"><div class="flex items-center gap-space-sm mb-space-sm"><img alt="LegalAI Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WJyjjwtFDHqN397HAeLRbHUIB_gJxKn1ytEQZCBObZ0y89MXwNjnrjuLk1PQzoy8edt_ujRhHw_3ILNVK5VdR6gIhSwGMliCkGYOkHFpjv3Dt-1jLI1Vz23gSVDtx7RIDd4Ws6j-fZj5WstcYpB3o_fWWS7J6YPo4Dy-t5EmeqFeK1W6kOyXCodoNkQ_em1w0D6qtbcGzM4ewV5vfN_jowGQXsIi5XT0JWn-R0Nsm8FVasVWNkNwk39nS4"/><span class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">LegalAI</span></a><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mb-space-md">Engineered for corporate counsels, attorneys, and compliance executives. Crystalline discovery, clause synthesis, and statutory citations.</p><div class="bg-surface-container-low p-space-sm rounded-lg max-w-md"><p class="font-code-sm text-code-sm text-on-surface-variant leading-relaxed">Disclaimer: LegalAI provides general legal information and document assistance. It is not a substitute for advice from a qualified legal professional.</p></div></div><div><h4 class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-space-sm">Product</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" href="#">AI Assistant</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Statutory Search</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Contract Redlining</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Case Analysis</a></li></ul></div><div><h4 class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-space-sm">Company</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" href="#">About Us</a></li><li><a class="hover:text-on-surface transition-colors" data-path="security-and-privacy" href="#">Security &amp; Trust</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Careers</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Contact</a></li></ul></div><div><h4 class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-space-sm">Legal &amp; Privacy</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" data-path="security-and-privacy" href="#">Privacy Policy</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Compliance Architecture</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Ethical AI Framework</a></li></ul></div></div><div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-sm text-label-sm"><p>© 2025 LegalAI Systems Inc. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary"></span> SOC2 Type II Certified</span><span>ISO/IEC 27001</span></div></div></div></footer>
+<script src="/js/app.js"></script>
+</body></html>

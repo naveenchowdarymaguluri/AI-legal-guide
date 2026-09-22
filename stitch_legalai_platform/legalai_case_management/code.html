@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed-dim":"#c3c0ff","error-container":"#ffdad6","outline-variant":"#c6c6cd","on-error":"#ffffff","on-primary-fixed-variant":"#3f465c","surface-container-low":"#eff4ff","on-secondary":"#ffffff","inverse-primary":"#bec6e0","primary-fixed":"#dae2fd","on-tertiary":"#ffffff","primary-fixed-dim":"#bec6e0","on-primary-fixed":"#131b2e","surface-tint":"#565e74","secondary":"#0051d5","surface-container-high":"#dce9ff","secondary-fixed-dim":"#b4c5ff","on-secondary-fixed-variant":"#003ea8","on-secondary-container":"#fefcff","primary":"#000000","on-tertiary-fixed-variant":"#3323cc","secondary-fixed":"#dbe1ff","primary-container":"#131b2e","on-error-container":"#93000a","on-primary":"#ffffff","surface-container":"#e5eeff","surface-container-highest":"#d3e4fe","inverse-surface":"#213145","surface-variant":"#d3e4fe","surface-dim":"#cbdbf5","secondary-container":"#316bf3","background":"#f8f9ff","tertiary":"#000000","inverse-on-surface":"#eaf1ff","on-tertiary-fixed":"#0f0069","surface-bright":"#f8f9ff","on-primary-container":"#7c839b","surface-container-lowest":"#ffffff","on-tertiary-container":"#7671ff","on-secondary-fixed":"#00174b","tertiary-container":"#0f0069","surface":"#f8f9ff","outline":"#76777d","on-surface":"#0b1c30","tertiary-fixed":"#e2dfff","on-surface-variant":"#45464d","on-background":"#0b1c30","error":"#ba1a1a"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-xl":"2rem","gutter":"1.5rem","space-md":"1rem","space-lg":"1.5rem","margin":"2rem","gutter-sm":"1rem","margin-sm":"1rem","space-sm":"0.5rem","space-xs":"0.25rem"},fontFamily:{"headline-md":["Geist"],"display-lg":["Geist"],"label-sm":["Geist"],"body-lg":["Inter"],"headline-lg":["Geist"],"body-md":["Inter"],"body-sm":["Inter"],"headline-sm":["Geist"],"code-sm":["JetBrains Mono"],"display-lg-mobile":["Geist"],"label-md":["Geist"]},fontSize:{"headline-md":["1.25rem",{lineHeight:"1.75rem",letterSpacing:"-0.015em",fontWeight:"600"}],"display-lg":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.03em",fontWeight:"600"}],"label-sm":["0.75rem",{lineHeight:"0.875rem",letterSpacing:"0.04em",fontWeight:"600"}],"body-lg":["1rem",{lineHeight:"1.625rem",letterSpacing:"-0.005em",fontWeight:"400"}],"headline-lg":["1.5rem",{lineHeight:"2rem",letterSpacing:"-0.02em",fontWeight:"600"}],"body-md":["0.875rem",{lineHeight:"1.5rem",letterSpacing:"0em",fontWeight:"400"}],"body-sm":["0.8125rem",{lineHeight:"1.375rem",letterSpacing:"0.005em",fontWeight:"400"}],"headline-sm":["1.125rem",{lineHeight:"1.5rem",letterSpacing:"-0.01em",fontWeight:"500"}],"code-sm":["0.75rem",{lineHeight:"1rem",letterSpacing:"-0.01em",fontWeight:"400"}],"display-lg-mobile":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.025em",fontWeight:"600"}],"label-md":["0.8125rem",{lineHeight:"1rem",letterSpacing:"0.01em",fontWeight:"500"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 bottom-0 w-64 bg-primary-container z-50 flex flex-col justify-between py-space-md"><div class="flex flex-col"><div class="px-space-md pb-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="LegalAI Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WJyjjwtFDHqN397HAeLRbHUIB_gJxKn1ytEQZCBObZ0y89MXwNjnrjuLk1PQzoy8edt_ujRhHw_3ILNVK5VdR6gIhSwGMliCkGYOkHFpjv3Dt-1jLI1Vz23gSVDtx7RIDd4Ws6j-fZj5WstcYpB3o_fWWS7J6YPo4Dy-t5EmeqFeK1W6kOyXCodoNkQ_em1w0D6qtbcGzM4ewV5vfN_jowGQXsIi5XT0JWn-R0Nsm8FVasVWNkNwk39nS4"/><span class="font-headline-sm text-headline-sm text-on-primary font-semibold tracking-tight">LegalAI</span></div><span class="font-code-sm text-code-sm px-space-xs py-0.5 rounded bg-surface-container-highest/20 text-on-primary-container">v2.4</span></div><div class="px-space-md py-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-primary-container">Workspace</span></div><nav class="flex flex-col gap-space-xs px-space-sm mt-space-xs" data-active-classes="bg-surface-container-highest/20 text-on-primary font-medium rounded-lg"><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="dashboard" href="#">Dashboard</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="assistant" href="#">AI Assistant</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="documents" href="#">Documents</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="research" href="#">Legal Research</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="compare" href="#">Compare</a><a aria-current="page" class="flex items-center px-space-sm py-space-sm transition-colors bg-surface-container-highest/20 text-on-primary font-medium rounded-lg" data-path="cases" href="#">Cases</a><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="drafts" href="#">Drafts</a></nav></div><div class="flex flex-col gap-space-xs px-space-sm"><nav class="flex flex-col gap-space-xs mb-space-sm" data-active-classes="bg-surface-container-highest/20 text-on-primary font-medium rounded-lg"><a class="flex items-center px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="settings" href="#">Settings</a></nav><div class="pt-space-sm px-space-sm flex items-center justify-between bg-surface-container-highest/10 rounded-lg p-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="Elena Vance profile" class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1FUQjK8cFPlzpv7UYlZxPoZ-dcEBxSThB_UEaVFqxRMGpG6IpSz86i54g--Tv6r0Y4sWZ-EGtj-f7Dz7XXrD97YkCF__Chs4DetAt_2PudOgk2oRx53aIUZcluV2HxujrqRcjommNCd7M0fJ3orcbarNoYXdeDggQdij4XxJsApZuWLZy2dJ01lcJBCAod95Xa3h6dpj_lviqTYkzoaKod6003ctFV8LC7kD3Py8HgQDdqyYPlnVMlg"/><div class="flex flex-col truncate"><span class="font-label-md text-label-md text-on-primary truncate font-medium">Elena Vance, Esq.</span><span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-wider">Enterprise Plan</span></div></div><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer text-base">unfold_more</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 z-40 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="flex items-center w-full bg-surface-container-low rounded-lg px-space-sm py-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-lg mr-space-sm">search</span><span class="font-body-sm text-body-sm flex-1 text-on-surface-variant/70">Search documents, statutes, clauses...</span><span class="font-code-sm text-code-sm bg-surface-container-highest/60 text-on-surface px-space-xs py-0.5 rounded">⌘K</span></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded-full"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Verified Citation Engine Active</span></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1FUQjK8cFPlzpv7UYlZxPoZ-dcEBxSThB_UEaVFqxRMGpG6IpSz86i54g--Tv6r0Y4sWZ-EGtj-f7Dz7XXrD97YkCF__Chs4DetAt_2PudOgk2oRx53aIUZcluV2HxujrqRcjommNCd7M0fJ3orcbarNoYXdeDggQdij4XxJsApZuWLZy2dJ01lcJBCAod95Xa3h6dpj_lviqTYkzoaKod6003ctFV8LC7kD3Py8HgQDdqyYPlnVMlg"/></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glow Overlay for Workspace Depth -->
+<div class="relative w-full px-space-lg py-space-md">
+<div class="absolute top-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-48 left-10 w-72 h-72 bg-tertiary-fixed-dim/20 rounded-full blur-2xl pointer-events-none -z-10"></div>
+<!-- Workspace Masthead -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-lg">
+<div>
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-code-sm text-code-sm text-secondary font-medium tracking-wider uppercase">Workspace / Dossiers</span>
+<span class="text-outline-variant">•</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Personal Legal Organizer</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">My Cases</h1>
+<span class="inline-flex items-center justify-center px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">3 Active</span>
+</div>
+</div>
+<!-- Action & View Tools -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center bg-surface-container-low rounded-lg p-1">
+<button class="px-3 py-1.5 rounded bg-surface-container-lowest shadow-sm font-label-sm text-label-sm text-on-surface font-medium transition-all">All Cases (3)</button>
+<button class="px-3 py-1.5 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors">Information Gathering (1)</button>
+<button class="px-3 py-1.5 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors">Researching (1)</button>
+<button class="px-3 py-1.5 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors">In Draft (1)</button>
+<button class="px-3 py-1.5 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors">Archived</button>
+</div>
+<button class="inline-flex items-center gap-space-xs bg-primary text-on-primary hover:bg-primary/90 px-4 py-2 rounded-lg font-label-md text-label-md transition-all shadow-sm">
+<span class="material-symbols-outlined text-base">add</span>
+<span>New Case</span>
+</button>
+</div>
+</div>
+<!-- Top Summary Analytical Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Card 1: Active Matters -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Active Matters</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-on-surface font-semibold">03</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">+1 this month</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-xl">folder_managed</span>
+</div>
+</div>
+<div class="mt-3 w-full bg-surface-container-low h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 60%"></div>
+</div>
+</div>
+<!-- Card 2: Tracked Documents -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Tracked Documents</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-on-surface font-semibold">09</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">100% indexed</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-xl">description</span>
+</div>
+</div>
+<!-- Sparkline SVG -->
+<div class="mt-3 flex items-center gap-2">
+<svg class="w-full h-4 text-secondary" fill="none" viewbox="0 0 100 16">
+<path d="M0 12 Q 25 4, 50 8 T 100 2" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Card 3: Citations Anchored -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Citations Anchored</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-on-surface font-semibold">24</span>
+<span class="font-code-sm text-code-sm text-secondary font-medium">Verified</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-xl">gavel</span>
+</div>
+</div>
+<div class="mt-3 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Statutory &amp; Regulatory Precedents</span>
+</div>
+</div>
+<!-- Card 4: Next Deadlines -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Next Deadlines</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-error font-semibold">02</span>
+<span class="font-label-sm text-label-sm text-error font-medium">Approaching</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-error-container/40 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-xl">alarm</span>
+</div>
+</div>
+<div class="mt-3 flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span class="truncate">Rental Dispute: 3 days remaining</span>
+<span class="font-code-sm text-code-sm font-semibold text-error">Sep 24</span>
+</div>
+</div>
+</div>
+<!-- Main Workspace Two-Panel Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT SUB-COLUMN: Case Cards Drawer / Quick Selector (xl:col-span-4) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Tracked Matters (3)</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant/70">Sorted by Activity</span>
+</div>
+<!-- Case 1: Rental Deposit Dispute (ACTIVE / SELECTED) -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-md shadow-md cursor-pointer transition-all hover:bg-surface-container-low/50">
+<div class="absolute left-0 top-3 bottom-3 w-1.5 bg-secondary rounded-r-full"></div>
+<div class="flex items-start justify-between gap-2 mb-2 pl-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="font-code-sm text-code-sm text-secondary font-medium">#CAS-2025-0849</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Civil / Tenancy</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-snug">Rental Deposit Dispute</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold shrink-0">
+              Information Gathering
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 pl-2 mb-space-sm">
+            Bangalore Indiranagar lease termination unrefunded ₹1,20,000 security deposit with unitemized paint deductions.
+          </p>
+<div class="flex items-center justify-between pt-2 border-t-0 bg-surface-container-low/60 rounded-lg px-3 py-2 pl-3">
+<div class="flex items-center gap-3 font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">attach_file</span>
+                3 Files
+              </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                2h ago
+              </span>
+</div>
+<span class="font-code-sm text-code-sm text-secondary font-medium flex items-center">
+              Selected
+              <span class="material-symbols-outlined text-sm ml-0.5">chevron_right</span>
+</span>
+</div>
+</div>
+<!-- Case 2: Employment Issue - Notice Period -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md cursor-pointer transition-all">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="font-code-sm text-code-sm text-on-surface-variant">#CAS-2025-0912</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Employment</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-medium leading-snug">Employment Issue - Notice Period</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-medium shrink-0">
+              Researching
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-sm">
+            Discrepancy between employment contract buyout clause and company HR exit policy regarding early release.
+          </p>
+<div class="flex items-center justify-between pt-2 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">attach_file</span>
+                4 Files
+              </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">event</span>
+                Created Sep 4
+              </span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant/70">Yesterday</span>
+</div>
+</div>
+<!-- Case 3: Consumer Complaint - Faulty Electronics -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md cursor-pointer transition-all">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="font-code-sm text-code-sm text-on-surface-variant">#CAS-2025-0978</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Consumer Rights</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-medium leading-snug">Consumer Complaint - Faulty Electronics</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed-dim/40 text-secondary font-label-sm text-label-sm font-semibold shrink-0">
+              Drafting
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-sm">
+            Authorized service centre refusal to honor 2-year statutory manufacturer warranty on failed motherboard unit.
+          </p>
+<div class="flex items-center justify-between pt-2 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">attach_file</span>
+                2 Files
+              </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">event</span>
+                Created Sep 18
+              </span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant/70">3 days ago</span>
+</div>
+</div>
+<!-- Visual Case Analytics Card -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-medium">Matter Portfolio Distribution</span>
+<span class="font-code-sm text-code-sm text-secondary font-semibold">100% Civil/Consumer</span>
+</div>
+<!-- Simple Minimal Bar Matrix -->
+<div class="flex items-center gap-1.5 h-3 rounded-md overflow-hidden mb-2">
+<div class="bg-secondary h-full rounded-sm" style="width: 45%" title="Tenancy"></div>
+<div class="bg-surface-tint h-full rounded-sm" style="width: 35%" title="Employment"></div>
+<div class="bg-secondary-container h-full rounded-sm" style="width: 20%" title="Consumer Protection"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-code-sm text-code-sm">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> Tenancy 45%</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-surface-tint"></span> Employment 35%</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary-container"></span> Consumer 20%</span>
+</div>
+</div>
+</div>
+<!-- RIGHT PRIMARY COLUMN: Active Case Detail Workspace (xl:col-span-8) -->
+<div class="xl:col-span-8 flex flex-col gap-space-lg">
+<!-- Case Dossier Header Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md pb-space-md">
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs mb-2">
+<span class="px-2.5 py-0.5 rounded-md bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold tracking-wide">
+                  Information Gathering
+                </span>
+<span class="px-2.5 py-0.5 rounded-md bg-surface-container-low font-code-sm text-code-sm text-on-surface font-medium">
+                  #CAS-2025-0849
+                </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">pin_drop</span>
+                  Bangalore Urban / Karnataka Rent Control Act Ref
+                </span>
+</div>
+<h2 class="font-display-lg text-display-lg text-on-surface font-semibold tracking-tight">Rental Deposit Dispute</h2>
+</div>
+<!-- Primary Workspace Actions -->
+<div class="flex flex-wrap items-center gap-space-xs shrink-0">
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm">note_add</span>
+<span>Add Note</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm">share</span>
+<span>Share with Counsel</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary/90 transition-all font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-sm">ios_share</span>
+<span>Export Dossier</span>
+</button>
+</div>
+</div>
+<!-- Dossier Segmented Tabs Navigation -->
+<div class="flex items-center gap-space-sm overflow-x-auto pb-1 mt-2 bg-surface-container-low/50 p-1.5 rounded-xl">
+<button class="px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold shadow-sm shrink-0">
+              Overview
+            </button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium shrink-0 transition-colors">
+              Documents (3)
+            </button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium shrink-0 transition-colors">
+              Chronological Timeline
+            </button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium shrink-0 transition-colors">
+              Inquiries &amp; Questions
+            </button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium shrink-0 transition-colors">
+              Case Notes
+            </button>
+<button class="px-4 py-2 rounded-lg text-secondary font-label-md text-label-md font-semibold shrink-0 transition-colors flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              AI Synthesized Summary
+            </button>
+</div>
+</div>
+<!-- TAB CONTENT VIEW: Split Panels (Evidence & Information vs AI Evidentiary Synthesis) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- LEFT SUB-COLUMN: Information & Evidence Log (lg:col-span-7) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Issue Summary Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg">info</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Matter Summary</h4>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant bg-surface-container-low px-2 py-0.5 rounded">User Context</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed bg-surface-container-low/40 p-3 rounded-lg">
+                User is organizing information related to an unrefunded security deposit (<span class="font-semibold font-code-sm text-code-sm">₹1,20,000</span>) following lease termination at Indiranagar apartment. Landlord claiming unsubstantiated painting deductions without itemized invoices.
+              </p>
+</div>
+<!-- Associated Evidence Documents -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg">folder_open</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Associated Evidence Documents</h4>
+</div>
+<span class="font-code-sm text-code-sm bg-surface-container-low text-on-surface-variant px-2 py-0.5 rounded">3 Verified Files</span>
+</div>
+<!-- Document List -->
+<div class="flex flex-col gap-space-sm">
+<!-- Document 1 -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded bg-surface-container-lowest flex items-center justify-center text-error shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-lg">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium truncate">Rental Agreement.pdf</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Executed 11-month lease, Clause 14 Deposit Refund terms</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<span class="font-code-sm text-code-sm text-on-surface-variant font-medium">1.4 MB</span>
+<button class="p-1 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+</div>
+</div>
+<!-- Document 2 -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded bg-surface-container-lowest flex items-center justify-center text-error shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-lg">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium truncate">Payment Receipt.pdf</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Bank NEFT transfer confirmation, ₹1,20,000</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<span class="font-code-sm text-code-sm text-on-surface-variant font-medium">420 KB</span>
+<button class="p-1 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+</div>
+</div>
+<!-- Document 3 -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded bg-surface-container-lowest flex items-center justify-center text-error shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-lg">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium truncate">Messages_and_Notice.pdf</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">WhatsApp &amp; Email communication transcript, notice July 15</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<span class="font-code-sm text-code-sm text-on-surface-variant font-medium">890 KB</span>
+<button class="p-1 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+</div>
+</div>
+<!-- Dropzone Strip -->
+<div class="p-space-md bg-surface-container-lowest rounded-xl flex flex-col sm:flex-row items-center justify-center gap-space-sm cursor-pointer hover:bg-surface-container-low transition-colors shadow-sm text-center">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-base">cloud_upload</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">+ Add Evidence Document</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(PDF, JPEG, or MSG up to 25MB)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Chronological Timeline -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg">timeline</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Chronological Event Log</h4>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span>
+                  Timestamped
+                </span>
+</div>
+<!-- Timeline Track -->
+<div class="relative pl-6 flex flex-col gap-space-md">
+<!-- Vertical Stem Line -->
+<div class="absolute left-2.5 top-2 bottom-2 w-0.5 bg-surface-container-highest"></div>
+<!-- Event 1 -->
+<div class="relative flex items-start gap-3">
+<div class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-secondary shadow-sm"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm font-semibold text-on-surface">12 Aug 2024</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Execution</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Agreement signed &amp; executed for 11 months duration.</p>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="relative flex items-start gap-3">
+<div class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-surface-tint shadow-sm"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm font-semibold text-on-surface">18 Aug 2024</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Payment Recorded</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Security deposit payment made via NEFT (<span class="font-code-sm text-code-sm bg-surface-container-low px-1 rounded">Ref: TXN8920194</span>).</p>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="relative flex items-start gap-3">
+<div class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-secondary shadow-sm"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm font-semibold text-on-surface">15 Jul 2025</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Statutory Notice</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Formal 30-day vacating notice served via registered email.</p>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="relative flex items-start gap-3">
+<div class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-surface-tint shadow-sm"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm font-semibold text-on-surface">01 Sep 2025</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Handover</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Deposit refund requested upon handing over keys &amp; joint inspection.</p>
+</div>
+</div>
+<!-- Event 5 -->
+<div class="relative flex items-start gap-3">
+<div class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-error shadow-sm"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm font-semibold text-error">05 Sep 2025</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-error font-medium">Disputed Claim</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Landlord response received claiming <span class="font-semibold text-error">₹45,000</span> deduction without accompanying invoices.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT SUB-COLUMN: AI Evidentiary Synthesis & Legal Actions (lg:col-span-5) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- AI Evidentiary Synthesis Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-md relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-secondary"></div>
+<div class="flex items-center justify-between mb-space-sm pt-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm font-semibold text-secondary uppercase tracking-wider">AI Evidentiary Synthesis</span>
+</div>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant">Neutral &amp; Objective Log</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md font-medium">
+                Based on the 3 documents uploaded and verified against statutory precedents:
+              </p>
+<!-- Synthesis Observations -->
+<div class="flex flex-col gap-space-sm">
+<!-- Observation 1 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Source Indicates</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed pl-3">
+                    Clause 14.2 of Rental Agreement stipulates full deposit return within 15 days of handover, subject to documented damages.
+                  </p>
+</div>
+<!-- Observation 2 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-error shrink-0"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-error font-semibold">Potential Issue to Review</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed pl-3">
+                    Payment receipt confirms ₹1,20,000 transfer, while landlord deduction notice lacks itemized receipts or labor estimates required under standard lease terms.
+                  </p>
+</div>
+<!-- Observation 3 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-tint shrink-0"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Relevant Statutory Reference</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed pl-3">
+                    Model Tenancy Act &amp; Karnataka Rent Control provisions governing security deposit thresholds and withholding requirements.
+                  </p>
+</div>
+</div>
+<!-- Important Guidance Box -->
+<div class="mt-space-md p-3 rounded-lg bg-surface-container flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">lightbulb</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Important Guidance</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    Consider discussing this documentation dossier with a qualified legal professional or local rent authority before initiating formal legal notices.
+                  </p>
+</div>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Matter Action Suite</span>
+<button class="w-full inline-flex items-center justify-between p-3 rounded-lg bg-primary text-on-primary hover:bg-primary/90 transition-colors shadow-sm group">
+<span class="flex items-center gap-2 font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-lg">edit_document</span>
+                  Generate Demand Notice Draft
+                </span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</button>
+<button class="w-full inline-flex items-center justify-between p-3 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors group">
+<span class="flex items-center gap-2 font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-lg text-secondary">manage_search</span>
+                  Run Precedent Search
+                </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Karnataka HC</span>
+</button>
+<button class="w-full inline-flex items-center justify-between p-3 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors group">
+<span class="flex items-center gap-2 font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-lg">picture_as_pdf</span>
+                  Compile Audit PDF
+                </span>
+<span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+<!-- Precedent Snapshot Mini Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Indexed Precedent Reference</span>
+<span class="font-code-sm text-code-sm text-secondary font-medium">Match: 94%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium mb-1">
+                K. R. Suresh v. M. G. Rao (Karnataka HC 2021)
+              </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                "Landlord is mandated to furnish original contractor invoices within statutory notice window before withholding tenant security amounts."
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mandatory Bottom Legal Information Disclaimer Banner -->
+<div class="mt-space-xl p-space-md bg-surface-container-low rounded-xl shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-base">verified_user</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<span class="font-semibold text-on-surface">LegalAI Information Organizer:</span> LegalAI provides information organization tools, not legal representation or advice. Evidentiary logs are structured for user organization and counsel consultation.
+        </p>
+</div>
+<button class="font-label-sm text-label-sm text-secondary font-semibold shrink-0 hover:underline">
+        Review Terms of Practice &amp; Disclaimer
+      </button>
+</div>
+</div>
+</div></main></div></body></html>
