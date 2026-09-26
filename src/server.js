@@ -63,9 +63,13 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Internal server error", message: err.message });
 });
 
-app.listen(PORT, () => {
-  console.log("==================================================");
-  console.log(`  LegalAI Platform is online at http://localhost:${PORT}`);
-  console.log(`  Jurisprudence Precision Engine Active`);
-  console.log("==================================================");
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log("==================================================");
+    console.log(`  LegalAI Platform is online at http://localhost:${PORT}`);
+    console.log(`  Jurisprudence Precision Engine Active`);
+    console.log("==================================================");
+  });
+}
+
+module.exports = app;

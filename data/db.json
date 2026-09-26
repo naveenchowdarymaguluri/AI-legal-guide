@@ -372,6 +372,41 @@
   ],
   "conversations": [
     {
+      "id": "conv-1790417864555",
+      "title": "Analyze the liability limitation in...",
+      "time": "Just now",
+      "docRef": "Direct Inquiry",
+      "messages": [
+        {
+          "id": "m-1790417864555-u",
+          "role": "user",
+          "content": "Analyze the liability limitation in Master Cloud Agreement",
+          "text": "Analyze the liability limitation in Master Cloud Agreement",
+          "timestamp": "2026-09-26T10:17:44.555Z"
+        },
+        {
+          "id": "m-1790417864555-a",
+          "role": "assistant",
+          "content": "### Indemnification Scope & Statutory Risk Allocation\n\nIndemnification clauses must be scrutinized for unilateral risk-shifting. Under Cal. Labor Code § 2802, employers are statutorily required to indemnify employees for all necessary expenses incurred in the discharge of their duties.\n\n**Employee Indemnification Protection:** Clauses requiring an employee or executive to indemnify the company for third-party claims arising from ordinary scope of duties are void and violate California public policy.\n\n**Mutual Enterprise Standard:** Standard commercial contracts require bilateral indemnification capped at total fees paid over the preceding 12-month period.\n\n**Gross Negligence Carveouts:** Indemnification obligations typically exclude losses resulting from the indemnified party's gross negligence, willful misconduct, or fraud.\n\n> **Jurisprudence Notice:** This AI synthesis provides source-grounded legal information for attorney review and does not constitute formal legal representation or binding doctrine.",
+          "text": "### Indemnification Scope & Statutory Risk Allocation\n\nIndemnification clauses must be scrutinized for unilateral risk-shifting. Under Cal. Labor Code § 2802, employers are statutorily required to indemnify employees for all necessary expenses incurred in the discharge of their duties.\n\n**Employee Indemnification Protection:** Clauses requiring an employee or executive to indemnify the company for third-party claims arising from ordinary scope of duties are void and violate California public policy.\n\n**Mutual Enterprise Standard:** Standard commercial contracts require bilateral indemnification capped at total fees paid over the preceding 12-month period.\n\n**Gross Negligence Carveouts:** Indemnification obligations typically exclude losses resulting from the indemnified party's gross negligence, willful misconduct, or fraud.\n\n> **Jurisprudence Notice:** This AI synthesis provides source-grounded legal information for attorney review and does not constitute formal legal representation or binding doctrine.",
+          "sources": [
+            {
+              "title": "California Labor Code",
+              "section": "§ 2802 (Mandatory Indemnity)",
+              "confidence": "99.6%"
+            },
+            {
+              "title": "Delaware General Corporation Law",
+              "section": "§ 145 (Officer Indemnification)",
+              "confidence": "98.2%"
+            }
+          ],
+          "confidence": "99.2%",
+          "timestamp": "2026-09-26T10:17:44.555Z"
+        }
+      ]
+    },
+    {
       "id": "conv-1790415339532",
       "title": "Analyze the liability limitation in...",
       "time": "Just now",

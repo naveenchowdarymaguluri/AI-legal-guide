@@ -523,33 +523,46 @@ Counsel for [CLIENT_NAME]`
 
 class StorageService {
   constructor() {
+    this.memoryDb = null;
     this.ensureDb();
   }
 
   ensureDb() {
-    const dir = path.dirname(DB_FILE);
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
-    }
-    if (!fs.existsSync(DB_FILE)) {
-      this.writeDb(defaultData);
+    try {
+      const dir = path.dirname(DB_FILE);
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+      }
+      if (!fs.existsSync(DB_FILE)) {
+        this.writeDb(defaultData);
+      }
+    } catch (e) {
+      if (!this.memoryDb) {
+        this.memoryDb = JSON.parse(JSON.stringify(defaultData));
+      }
     }
   }
 
   readDb() {
+    if (this.memoryDb) return this.memoryDb;
     this.ensureDb();
     try {
       const raw = fs.readFileSync(DB_FILE, "utf8");
-      return JSON.parse(raw);
+      this.memoryDb = JSON.parse(raw);
+      return this.memoryDb;
     } catch (err) {
-      console.error("Error reading database file, resetting to default:", err);
-      this.writeDb(defaultData);
-      return defaultData;
+      this.memoryDb = JSON.parse(JSON.stringify(defaultData));
+      return this.memoryDb;
     }
   }
 
   writeDb(data) {
-    fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), "utf8");
+    this.memoryDb = data;
+    try {
+      fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), "utf8");
+    } catch (e) {
+      // In read-only environments (e.g. Vercel), gracefully persist in memory
+    }
   }
 
   getUser() {

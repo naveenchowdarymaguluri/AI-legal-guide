@@ -9,9 +9,13 @@ const diffEngine = require("../services/diffEngine");
 const router = express.Router();
 
 // Multer upload config
-const uploadDir = path.join(__dirname, "../../data/uploads");
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
+const uploadDir = process.env.VERCEL ? path.join("/tmp", "uploads") : path.join(__dirname, "../../data/uploads");
+try {
+  if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+  }
+} catch (e) {
+  // Gracefully continue in serverless environments
 }
 const upload = multer({
   dest: uploadDir,
