@@ -1,10 +1,228 @@
 ﻿// LegalAI - Case Management Script (cases.js)
 
+let activeCaseId = "case-1";
+let allCasesList = [];
+
 document.addEventListener("DOMContentLoaded", () => {
   initCaseModal();
-  initTaskCheckboxes();
   initCategoryFilters();
+  loadCases();
 });
+
+function loadCases(categoryFilter = "All") {
+  fetch("/api/cases")
+    .then(r => r.json())
+    .then(cases => {
+      allCasesList = cases;
+      
+      // Update top count metrics
+      const activeCountEl = document.querySelector(".font-display-lg:has-text('03')") || document.querySelector(".font-display-lg");
+      if (activeCountEl) {
+        activeCountEl.textContent = cases.length < 10 ? `0${cases.length}` : cases.length;
+      }
+
+      let filtered = cases;
+      if (categoryFilter && categoryFilter !== "All" && categoryFilter !== "All Cases") {
+        filtered = cases.filter(c => c.category.toLowerCase().includes(categoryFilter.toLowerCase()));
+      }
+
+      renderCasesList(filtered);
+      const selected = cases.find(c => c.id === activeCaseId) || cases[0];
+      if (selected) {
+        activeCaseId = selected.id;
+        renderCaseDossier(selected);
+      }
+    })
+    .catch(() => {});
+}
+
+function renderCasesList(cases) {
+  const listContainer = document.querySelector(".xl\\:col-span-4 .space-y-space-md") ||
+                        document.querySelector(".xl\\:col-span-4");
+  if (!listContainer) return;
+
+  const header = `
+    <div class="flex items-center justify-between px-1 mb-2">
+      <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Tracked Matters (${cases.length})</span>
+      <span class="font-code-sm text-code-sm text-on-surface-variant/70">Live Docket Sync</span>
+    </div>
+  `;
+
+  const cardsHtml = cases.map(c => {
+    const isSelected = c.id === activeCaseId;
+    return `
+      <div class="relative bg-surface-container-lowest rounded-xl p-space-md shadow-xs hover:shadow-md cursor-pointer transition-all border ${isSelected ? 'border-secondary shadow-sm' : 'border-outline-variant/30 hover:bg-surface-container-low/50'}" onclick="selectCase('${c.id}')">
+        ${isSelected ? '<div class="absolute left-0 top-3 bottom-3 w-1.5 bg-secondary rounded-r-full"></div>' : ''}
+        <div class="flex items-start justify-between gap-2 mb-2 pl-2">
+          <div class="flex flex-col min-w-0">
+            <div class="flex items-center gap-1.5 mb-1">
+              <span class="font-code-sm text-code-sm text-secondary font-medium font-mono">${escapeHtml(c.docket)}</span>
+              <span class="text-outline-variant">•</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant truncate">${escapeHtml(c.client)}</span>
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-snug truncate">${escapeHtml(c.title)}</h3>
+          </div>
+          <span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold shrink-0 text-xs">
+            ${escapeHtml(c.category)}
+          </span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 pl-2 mb-space-sm">
+          ${escapeHtml(c.summary || '')}
+        </p>
+        <div class="flex items-center justify-between pt-2 bg-surface-container-low/60 rounded-lg px-3 py-2 pl-3 text-xs font-label-sm">
+          <div class="flex items-center gap-3 text-on-surface-variant">
+            <span class="flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">alarm</span>
+              ${c.nextDeadline ? 'Due ' + c.nextDeadline : 'Open'}
+            </span>
+            <span class="flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">checklist</span>
+              ${(c.tasks || []).filter(t => t.done).length}/${(c.tasks || []).length} Tasks
+            </span>
+          </div>
+          <span class="font-code-sm text-code-sm text-secondary font-medium flex items-center">
+            ${isSelected ? 'Active' : 'Inspect'}
+            <span class="material-symbols-outlined text-sm ml-0.5">chevron_right</span>
+          </span>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  listContainer.innerHTML = header + `<div class="space-y-3">${cardsHtml}</div>`;
+}
+
+window.selectCase = function(id) {
+  activeCaseId = id;
+  const matched = allCasesList.find(c => c.id === id);
+  if (matched) {
+    renderCaseDossier(matched);
+    renderCasesList(allCasesList);
+  }
+};
+
+function renderCaseDossier(c) {
+  const dossierContainer = document.querySelector(".xl\\:col-span-8");
+  if (!dossierContainer) return;
+
+  const tasksHtml = (c.tasks || []).map(t => `
+    <div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low/60 border border-outline-variant/30 hover:bg-surface-container-low transition-colors">
+      <label class="flex items-center gap-3 cursor-pointer select-none min-w-0 flex-1">
+        <input type="checkbox" ${t.done ? 'checked' : ''} onchange="toggleTask('${c.id}', '${t.id}', this.checked)" class="w-4 h-4 accent-secondary rounded cursor-pointer" />
+        <span class="font-body-md text-body-md ${t.done ? 'line-through text-on-surface-variant/60' : 'text-on-surface font-medium'} truncate">
+          ${escapeHtml(t.text)}
+        </span>
+      </label>
+      <span class="font-code-sm text-code-sm text-outline ml-2 shrink-0">Milestone</span>
+    </div>
+  `).join("");
+
+  dossierContainer.innerHTML = `
+    <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 p-space-lg flex flex-col gap-space-lg animate-in fade-in duration-200">
+      <!-- Dossier Header -->
+      <div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md pb-space-md border-b border-outline-variant/20">
+        <div class="flex flex-col gap-1 min-w-0">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-secondary/10 text-secondary font-mono font-medium">${escapeHtml(c.docket)}</span>
+            <span class="text-outline-variant">•</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">${escapeHtml(c.jurisdiction)}</span>
+          </div>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight mt-1">
+            ${escapeHtml(c.title)}
+          </h2>
+          <span class="font-body-sm text-body-sm text-on-surface-variant">
+            Client Entity: <strong class="text-on-surface">${escapeHtml(c.client)}</strong> • Lead Counsel: <strong class="text-on-surface">${escapeHtml(c.leadCounsel)}</strong>
+          </span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="window.location.href='/drafts'" class="px-3.5 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5 shadow-xs">
+            <span class="material-symbols-outlined text-base">edit_note</span>
+            <span>Draft Pleading</span>
+          </button>
+          <button onclick="window.location.href='/assistant?q=Provide%20case%20strategy%20for%20${encodeURIComponent(c.title)}'" class="px-3.5 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors flex items-center gap-1.5 shadow-xs">
+            <span class="material-symbols-outlined text-base">smart_toy</span>
+            <span>Case Strategy AI</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scope & Overview -->
+      <div class="bg-surface-container-low/50 p-space-md rounded-xl border-l-4 border-secondary space-y-1">
+        <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Matter Scope & Evidentiary Objectives</span>
+        <p class="font-body-md text-body-md text-on-surface leading-relaxed">
+          ${escapeHtml(c.summary || 'Comprehensive legal review and docket deadline management.')}
+        </p>
+      </div>
+
+      <!-- Next Statutory Deadline Banner -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+        <div class="p-space-md rounded-xl bg-surface-container-low/60 border border-outline-variant/30 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-error-container text-error flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-xl">alarm</span>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Next Statutory Deadline</span>
+            <span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">${escapeHtml(c.deadlineLabel || 'Court Filing')}</span>
+            <span class="font-code-sm text-code-sm text-error font-medium">${escapeHtml(c.nextDeadline || 'Pending')}</span>
+          </div>
+        </div>
+
+        <div class="p-space-md rounded-xl bg-surface-container-low/60 border border-outline-variant/30 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-surface-container text-secondary flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-xl">gavel</span>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Forum & Court Branch</span>
+            <span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">${escapeHtml(c.jurisdiction)}</span>
+            <span class="font-code-sm text-code-sm text-secondary font-medium">Verified Active Jurisdiction</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Milestone Tasks Checklist -->
+      <div class="space-y-space-sm">
+        <div class="flex items-center justify-between">
+          <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Milestone Tasks & Filings</h3>
+          <span class="font-code-sm text-code-sm text-on-surface-variant font-mono">Real-Time Persistent Sync</span>
+        </div>
+        <div class="space-y-2">
+          ${tasksHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+window.toggleTask = function(caseId, taskId, isDone) {
+  fetch(`/api/cases/${caseId}/tasks`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ taskId, done: isDone })
+  })
+    .then(r => r.json())
+    .then(updated => {
+      const idx = allCasesList.findIndex(c => c.id === caseId);
+      if (idx !== -1) allCasesList[idx] = updated;
+      window.showToast("Task Synchronized", isDone ? "Marked milestone as completed." : "Task reset to pending.");
+      renderCasesList(allCasesList);
+    });
+};
+
+function initCategoryFilters() {
+  document.querySelectorAll(".flex.items-center.bg-surface-container-low button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".flex.items-center.bg-surface-container-low button").forEach(b => {
+        b.classList.remove("bg-surface-container-lowest", "shadow-sm", "text-on-surface");
+        b.classList.add("text-on-surface-variant");
+      });
+      btn.classList.add("bg-surface-container-lowest", "shadow-sm", "text-on-surface");
+      btn.classList.remove("text-on-surface-variant");
+
+      const catText = btn.textContent.split("(")[0].trim();
+      loadCases(catText);
+    });
+  });
+}
 
 function initCaseModal() {
   const newCaseBtn = Array.from(document.querySelectorAll("button")).find(b => b.textContent.includes("New Case"));
@@ -17,7 +235,7 @@ function initCaseModal() {
             <span class="material-symbols-outlined text-secondary text-2xl">folder_shared</span>
             <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Create Legal Case Dossier</h3>
           </div>
-          <button onclick="closeCaseModal()" class="text-on-surface-variant hover:text-on-surface">
+          <button onclick="document.getElementById('newCaseModal').classList.add('hidden')" class="text-on-surface-variant hover:text-on-surface">
             <span class="material-symbols-outlined text-xl">close</span>
           </button>
         </div>
@@ -67,7 +285,7 @@ function initCaseModal() {
           </div>
 
           <div class="flex items-center justify-end gap-2 pt-2">
-            <button type="button" onclick="closeCaseModal()" class="px-4 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors">
+            <button type="button" onclick="document.getElementById('newCaseModal').classList.add('hidden')" class="px-4 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors">
               Cancel
             </button>
             <button type="submit" class="px-5 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary/90 font-label-md text-label-md transition-colors shadow-sm flex items-center gap-1.5">
@@ -101,9 +319,11 @@ function initCaseModal() {
     })
       .then(r => r.json())
       .then(created => {
-        closeCaseModal();
+        modal.classList.add("hidden");
+        form.reset();
+        activeCaseId = created.id;
         window.showToast("Case Dossier Created", `Docket #${created.docket} created successfully.`);
-        setTimeout(() => window.location.reload(), 800);
+        loadCases();
       })
       .catch(() => {
         window.showToast("Error", "Could not create case.", "error");
@@ -111,39 +331,6 @@ function initCaseModal() {
   });
 }
 
-window.closeCaseModal = function() {
-  const modal = document.getElementById("newCaseModal");
-  if (modal) modal.classList.add("hidden");
-};
-
-function initTaskCheckboxes() {
-  document.querySelectorAll("input[type='checkbox']").forEach(cb => {
-    cb.addEventListener("change", () => {
-      const label = cb.closest("div")?.querySelector("span, p");
-      if (label) {
-        if (cb.checked) {
-          label.classList.add("line-through", "text-on-surface-variant/60");
-        } else {
-          label.classList.remove("line-through", "text-on-surface-variant/60");
-        }
-      }
-      window.showToast("Task Updated", cb.checked ? "Milestone task marked as complete." : "Task marked pending.");
-    });
-  });
-}
-
-function initCategoryFilters() {
-  document.querySelectorAll(".flex.items-center.bg-surface-container-low button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".flex.items-center.bg-surface-container-low button").forEach(b => {
-        b.classList.remove("bg-surface-container-lowest", "shadow-sm", "text-on-surface");
-        b.classList.add("text-on-surface-variant");
-      });
-      btn.classList.add("bg-surface-container-lowest", "shadow-sm", "text-on-surface");
-      btn.classList.remove("text-on-surface-variant");
-
-      const filterText = btn.textContent.split("(")[0].trim().toLowerCase();
-      window.showToast("Filtered Matters", `Displaying: ${btn.textContent.trim()}`);
-    });
-  });
+function escapeHtml(str) {
+  return (str || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }

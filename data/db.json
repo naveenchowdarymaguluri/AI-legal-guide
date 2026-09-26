@@ -23,6 +23,12 @@
     ],
     "apiKeys": [
       {
+        "name": "E2E Test Key",
+        "key": "lex_live_fnk3k2...ckl",
+        "created": "2026-09-26",
+        "status": "Active"
+      },
+      {
         "name": "Production Gateway Key",
         "key": "lex_live_89f...28b",
         "created": "2026-08-14",
@@ -130,7 +136,52 @@
       "riskScore": 22,
       "clausesCount": 14,
       "highRisks": 1,
-      "clauses": []
+      "clauses": [
+        {
+          "id": "c-2-1",
+          "section": "Section 2.1",
+          "title": "Service Delivery Standards & Acceptance",
+          "text": "Provider shall deliver professional SaaS integration services adhering to enterprise standards. Customer shall have fifteen (15) calendar days following milestone delivery to verify deliverables.",
+          "risk": "Low",
+          "riskScore": 12,
+          "statuteRef": "UCC § 2-606 (Acceptance of Goods)",
+          "explanation": "Standard 15-day inspection window with deemed acceptance upon payment.",
+          "verified": true
+        },
+        {
+          "id": "c-2-2",
+          "section": "Section 5.3",
+          "title": "Service Level Agreement (SLA) & Credits",
+          "text": "Provider covenants to maintain 99.9% monthly platform uptime. In the event of unresolved downtime exceeding 0.1%, Customer shall be entitled to service credits not to exceed 10% of monthly fee.",
+          "risk": "Low",
+          "riskScore": 18,
+          "statuteRef": "Model Enterprise SLA Standard",
+          "explanation": "Clear service credit remedy as exclusive contractual remedy for downtime.",
+          "verified": true
+        },
+        {
+          "id": "c-2-3",
+          "section": "Section 9.2",
+          "title": "Unilateral Price Escalation at Renewal",
+          "text": "Provider reserves the absolute right to increase annual subscription fees by up to fifteen percent (15%) upon each renewal period without requiring Customer's express written amendment.",
+          "risk": "High",
+          "riskScore": 82,
+          "statuteRef": "Uniform Commercial Code § 2-302 (Unconscionability)",
+          "explanation": "HIGH RISK: Uncapped 15% automatic escalation significantly exceeds CPI/inflation indices (standard is 3-5% capped).",
+          "verified": true
+        },
+        {
+          "id": "c-2-4",
+          "section": "Section 14.1",
+          "title": "Delaware Governing Law & Forum",
+          "text": "This Agreement and all disputes arising hereunder shall be governed exclusively by the laws of the State of Delaware and adjudicated in the Court of Chancery.",
+          "risk": "Low",
+          "riskScore": 10,
+          "statuteRef": "Del. Code tit. 8",
+          "explanation": "Authoritative corporate forum selection with mature commercial precedent.",
+          "verified": true
+        }
+      ]
     },
     {
       "id": "doc-3",
@@ -145,7 +196,41 @@
       "riskScore": 12,
       "clausesCount": 8,
       "highRisks": 0,
-      "clauses": []
+      "clauses": [
+        {
+          "id": "c-3-1",
+          "section": "Section 1.1",
+          "title": "Scope of Evaluation Purpose",
+          "text": "Confidential Information shall be accessed and used solely to evaluate potential Series B corporate financing transactions between the parties.",
+          "risk": "Low",
+          "riskScore": 10,
+          "statuteRef": "Defend Trade Secrets Act (DTSA)",
+          "explanation": "Properly tailored narrow evaluation purpose preventing competitive reverse engineering.",
+          "verified": true
+        },
+        {
+          "id": "c-3-2",
+          "section": "Section 3.2",
+          "title": "Trade Secret Safe Harbors & Exclusions",
+          "text": "Confidential information excludes data publicly known, already in recipient's lawful possession, or independently developed without access.",
+          "risk": "Low",
+          "riskScore": 12,
+          "statuteRef": "Uniform Trade Secrets Act (UTSA)",
+          "explanation": "Standard trade secret carveouts required for legal enforceability.",
+          "verified": true
+        },
+        {
+          "id": "c-3-3",
+          "section": "Section 6.1",
+          "title": "Residual Knowledge & Memory Defense",
+          "text": "Recipient employees may retain generalized concepts, techniques, and ideas in unaided memory without infringing confidentiality terms.",
+          "risk": "Medium",
+          "riskScore": 48,
+          "statuteRef": "Cal. Civ. Code § 3426.1",
+          "explanation": "Residuals clause is somewhat broad; could facilitate inadvertent trade secret leakage without written clean-room protocols.",
+          "verified": true
+        }
+      ]
     },
     {
       "id": "doc-4",
@@ -160,7 +245,41 @@
       "riskScore": 54,
       "clausesCount": 22,
       "highRisks": 3,
-      "clauses": []
+      "clauses": [
+        {
+          "id": "c-4-1",
+          "section": "Section 4.1",
+          "title": "Annual Base Rent Escalation",
+          "text": "Tenant shall pay monthly base rent subject to a five percent (5.0%) compounding annual increase on each anniversary of lease commencement.",
+          "risk": "Medium",
+          "riskScore": 42,
+          "statuteRef": "Standard BOMA Commercial Indices",
+          "explanation": "Compounding 5% is above current regional commercial lease rates (typical 2.5% to 3.5%).",
+          "verified": true
+        },
+        {
+          "id": "c-4-2",
+          "section": "Section 6.2",
+          "title": "Operating Expenses (CAM) Pass-Through Allocation",
+          "text": "Tenant shall pay proportionate share of all building operating costs, including Landlord's historical capital structural improvements and seismic retrofits amortized over 5 years.",
+          "risk": "High",
+          "riskScore": 89,
+          "statuteRef": "Cal. Civ. Code § 1950.7 / BOMA 2017 Standards",
+          "explanation": "CRITICAL RISK: Landlord passes through major building structural capital improvements that should be landlord expense, not operating expense.",
+          "verified": true
+        },
+        {
+          "id": "c-4-3",
+          "section": "Section 11.4",
+          "title": "Holdover Penalty Assessment Rate",
+          "text": "In the event Tenant remains in possession following expiration, holdover rent shall be assessed at two hundred fifty percent (250%) of prevailing market base rent.",
+          "risk": "High",
+          "riskScore": 92,
+          "statuteRef": "Cal. Civ. Code § 1671(b) (Illegal Penalty Prohibition)",
+          "explanation": "CRITICAL UNENFORCEABLE PENALTY: Holdover penalties over 200% are routinely struck down as unlawful liquidated damages penalties under California law (*Ridgley v. Topa Thrift*).",
+          "verified": true
+        }
+      ]
     }
   ],
   "cases": [
@@ -253,40 +372,107 @@
   ],
   "conversations": [
     {
-      "id": "conv-1790080842132",
-      "title": "Explain Section 14 notice period",
+      "id": "conv-1790415339532",
+      "title": "Analyze the liability limitation in...",
       "time": "Just now",
       "docRef": "Direct Inquiry",
       "messages": [
         {
-          "id": "m-1790080842132-u",
+          "id": "m-1790415339532-u",
           "role": "user",
-          "content": "Explain Section 14 notice period",
-          "timestamp": "2026-09-22T12:40:42.132Z"
+          "content": "Analyze the liability limitation in Master Cloud Agreement",
+          "text": "Analyze the liability limitation in Master Cloud Agreement",
+          "timestamp": "2026-09-26T09:35:39.532Z"
         },
         {
-          "id": "m-1790080842132-a",
+          "id": "m-1790415339532-a",
           "role": "assistant",
-          "content": "### Contractual Termination Protocols & Statutory Baselines\n\nContractual termination provisions operate against background statutory defaults. In California, employment is presumed at-will under Cal. Labor Code § 2922 unless modified by express contractual terms requiring notice or cause.\n\n**Termination Without Cause:** A clause requiring 30-day notice is standard and legally binding. If the employer terminates without providing the notice period, the employee is entitled to compensation in lieu of notice.\n\n**Termination For Cause:** Requires verifiable material breach. A 10-day cure period is legally enforceable, though standard commercial covenants often grant 30 days.\n\n**Severance & Release Requirements:** Under Cal. Civ. Code § 1542, general releases must explicitly recite statutory waiver language to extinguish unknown claims.\n\n> **Jurisprudence Notice:** This AI synthesis provides source-grounded legal information for attorney review and does not constitute formal legal representation or binding doctrine.",
+          "content": "### Indemnification Scope & Statutory Risk Allocation\n\nIndemnification clauses must be scrutinized for unilateral risk-shifting. Under Cal. Labor Code § 2802, employers are statutorily required to indemnify employees for all necessary expenses incurred in the discharge of their duties.\n\n**Employee Indemnification Protection:** Clauses requiring an employee or executive to indemnify the company for third-party claims arising from ordinary scope of duties are void and violate California public policy.\n\n**Mutual Enterprise Standard:** Standard commercial contracts require bilateral indemnification capped at total fees paid over the preceding 12-month period.\n\n**Gross Negligence Carveouts:** Indemnification obligations typically exclude losses resulting from the indemnified party's gross negligence, willful misconduct, or fraud.\n\n> **Jurisprudence Notice:** This AI synthesis provides source-grounded legal information for attorney review and does not constitute formal legal representation or binding doctrine.",
+          "text": "### Indemnification Scope & Statutory Risk Allocation\n\nIndemnification clauses must be scrutinized for unilateral risk-shifting. Under Cal. Labor Code § 2802, employers are statutorily required to indemnify employees for all necessary expenses incurred in the discharge of their duties.\n\n**Employee Indemnification Protection:** Clauses requiring an employee or executive to indemnify the company for third-party claims arising from ordinary scope of duties are void and violate California public policy.\n\n**Mutual Enterprise Standard:** Standard commercial contracts require bilateral indemnification capped at total fees paid over the preceding 12-month period.\n\n**Gross Negligence Carveouts:** Indemnification obligations typically exclude losses resulting from the indemnified party's gross negligence, willful misconduct, or fraud.\n\n> **Jurisprudence Notice:** This AI synthesis provides source-grounded legal information for attorney review and does not constitute formal legal representation or binding doctrine.",
           "sources": [
             {
               "title": "California Labor Code",
-              "section": "§ 2922 (At-Will Baseline)",
-              "confidence": "99.4%"
+              "section": "§ 2802 (Mandatory Indemnity)",
+              "confidence": "99.6%"
             },
             {
-              "title": "Restatement (Second) of Contracts",
-              "section": "§ 241 (Material Breach Factors)",
-              "confidence": "98.7%"
-            },
-            {
-              "title": "Cal. Civil Code",
-              "section": "§ 1542 (General Release Waiver)",
-              "confidence": "97.9%"
+              "title": "Delaware General Corporation Law",
+              "section": "§ 145 (Officer Indemnification)",
+              "confidence": "98.2%"
             }
           ],
-          "confidence": "99.4%",
-          "timestamp": "2026-09-22T12:40:42.132Z"
+          "confidence": "99.2%",
+          "timestamp": "2026-09-26T09:35:39.532Z"
+        }
+      ]
+    },
+    {
+      "id": "conv-1790415247700",
+      "title": "Analyze the liability limitation in...",
+      "time": "Just now",
+      "docRef": "Direct Inquiry",
+      "messages": [
+        {
+          "id": "m-1790415247700-u",
+          "role": "user",
+          "content": "Analyze the liability limitation in Master Cloud Agreement",
+          "text": "Analyze the liability limitation in Master Cloud Agreement",
+          "timestamp": "2026-09-26T09:34:07.700Z"
+        },
+        {
+          "id": "m-1790415247700-a",
+          "role": "assistant",
+          "content": "### Indemnification Scope & Statutory Risk Allocation\n\nIndemnification clauses must be scrutinized for unilateral risk-shifting. Under Cal. Labor Code § 2802, employers are statutorily required to indemnify employees for all necessary expenses incurred in the discharge of their duties.\n\n**Employee Indemnification Protection:** Clauses requiring an employee or executive to indemnify the company for third-party claims arising from ordinary scope of duties are void and violate California public policy.\n\n**Mutual Enterprise Standard:** Standard commercial contracts require bilateral indemnification capped at total fees paid over the preceding 12-month period.\n\n**Gross Negligence Carveouts:** Indemnification obligations typically exclude losses resulting from the indemnified party's gross negligence, willful misconduct, or fraud.\n\n> **Jurisprudence Notice:** This AI synthesis provides source-grounded legal information for attorney review and does not constitute formal legal representation or binding doctrine.",
+          "text": "### Indemnification Scope & Statutory Risk Allocation\n\nIndemnification clauses must be scrutinized for unilateral risk-shifting. Under Cal. Labor Code § 2802, employers are statutorily required to indemnify employees for all necessary expenses incurred in the discharge of their duties.\n\n**Employee Indemnification Protection:** Clauses requiring an employee or executive to indemnify the company for third-party claims arising from ordinary scope of duties are void and violate California public policy.\n\n**Mutual Enterprise Standard:** Standard commercial contracts require bilateral indemnification capped at total fees paid over the preceding 12-month period.\n\n**Gross Negligence Carveouts:** Indemnification obligations typically exclude losses resulting from the indemnified party's gross negligence, willful misconduct, or fraud.\n\n> **Jurisprudence Notice:** This AI synthesis provides source-grounded legal information for attorney review and does not constitute formal legal representation or binding doctrine.",
+          "sources": [
+            {
+              "title": "California Labor Code",
+              "section": "§ 2802 (Mandatory Indemnity)",
+              "confidence": "99.6%"
+            },
+            {
+              "title": "Delaware General Corporation Law",
+              "section": "§ 145 (Officer Indemnification)",
+              "confidence": "98.2%"
+            }
+          ],
+          "confidence": "99.2%",
+          "timestamp": "2026-09-26T09:34:07.700Z"
+        }
+      ]
+    },
+    {
+      "id": "conv-1790414723555",
+      "title": "Analyze the liability limitation in...",
+      "time": "Just now",
+      "docRef": "Direct Inquiry",
+      "messages": [
+        {
+          "id": "m-1790414723555-u",
+          "role": "user",
+          "content": "Analyze the liability limitation in Master Cloud Agreement",
+          "text": "Analyze the liability limitation in Master Cloud Agreement",
+          "timestamp": "2026-09-26T09:25:23.555Z"
+        },
+        {
+          "id": "m-1790414723555-a",
+          "role": "assistant",
+          "content": "### Indemnification Scope & Statutory Risk Allocation\n\nIndemnification clauses must be scrutinized for unilateral risk-shifting. Under Cal. Labor Code § 2802, employers are statutorily required to indemnify employees for all necessary expenses incurred in the discharge of their duties.\n\n**Employee Indemnification Protection:** Clauses requiring an employee or executive to indemnify the company for third-party claims arising from ordinary scope of duties are void and violate California public policy.\n\n**Mutual Enterprise Standard:** Standard commercial contracts require bilateral indemnification capped at total fees paid over the preceding 12-month period.\n\n**Gross Negligence Carveouts:** Indemnification obligations typically exclude losses resulting from the indemnified party's gross negligence, willful misconduct, or fraud.\n\n> **Jurisprudence Notice:** This AI synthesis provides source-grounded legal information for attorney review and does not constitute formal legal representation or binding doctrine.",
+          "text": "### Indemnification Scope & Statutory Risk Allocation\n\nIndemnification clauses must be scrutinized for unilateral risk-shifting. Under Cal. Labor Code § 2802, employers are statutorily required to indemnify employees for all necessary expenses incurred in the discharge of their duties.\n\n**Employee Indemnification Protection:** Clauses requiring an employee or executive to indemnify the company for third-party claims arising from ordinary scope of duties are void and violate California public policy.\n\n**Mutual Enterprise Standard:** Standard commercial contracts require bilateral indemnification capped at total fees paid over the preceding 12-month period.\n\n**Gross Negligence Carveouts:** Indemnification obligations typically exclude losses resulting from the indemnified party's gross negligence, willful misconduct, or fraud.\n\n> **Jurisprudence Notice:** This AI synthesis provides source-grounded legal information for attorney review and does not constitute formal legal representation or binding doctrine.",
+          "sources": [
+            {
+              "title": "California Labor Code",
+              "section": "§ 2802 (Mandatory Indemnity)",
+              "confidence": "99.6%"
+            },
+            {
+              "title": "Delaware General Corporation Law",
+              "section": "§ 145 (Officer Indemnification)",
+              "confidence": "98.2%"
+            }
+          ],
+          "confidence": "99.2%",
+          "timestamp": "2026-09-26T09:25:23.555Z"
         }
       ]
     },
@@ -429,6 +615,20 @@
       "summary": "A liquidated damages provision is invalid if it bears no reasonable relationship to the range of actual damages the parties could have anticipated. Holdover penalties exceeding 150%-200% of fair market base rent risk invalidation as illegal penalties.",
       "relevantSections": [
         "Cal. Civ. Code § 1671(b)"
+      ]
+    },
+    {
+      "id": "res-5",
+      "title": "Corporate Indemnification Scope and Exculpation under Delaware & California Doctrine",
+      "jurisdiction": "Delaware",
+      "citation": "Del. Code tit. 8, § 145; Cal. Corp. Code § 317; Waltuch v. Conticommodity Services (1996)",
+      "court": "Delaware Court of Chancery & 2nd Cir.",
+      "year": "2024 Precedent",
+      "summary": "Mandatory indemnification applies to corporate officers/directors who have been successful on the merits or otherwise in defense of any action. Third-party indemnity covers good faith actions reasonably believed to be in or not opposed to the best interests of the corporation.",
+      "relevantSections": [
+        "DGCL § 145(a)-(c)",
+        "Cal. Corp. Code § 317(d)",
+        "Model Business Corporation Act § 8.52"
       ]
     }
   ],

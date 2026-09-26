@@ -1,4 +1,4 @@
-﻿const fs = require("fs");
+const fs = require("fs");
 const path = require("path");
 
 const DB_FILE = path.join(__dirname, "../../data/db.json");
@@ -104,7 +104,52 @@ const defaultData = {
       riskScore: 22,
       clausesCount: 14,
       highRisks: 1,
-      clauses: []
+      clauses: [
+        {
+          id: "c-2-1",
+          section: "Section 2.1",
+          title: "Service Delivery Standards & Acceptance",
+          text: "Provider shall deliver professional SaaS integration services adhering to enterprise standards. Customer shall have fifteen (15) calendar days following milestone delivery to verify deliverables.",
+          risk: "Low",
+          riskScore: 12,
+          statuteRef: "UCC § 2-606 (Acceptance of Goods)",
+          explanation: "Standard 15-day inspection window with deemed acceptance upon payment.",
+          verified: true
+        },
+        {
+          id: "c-2-2",
+          section: "Section 5.3",
+          title: "Service Level Agreement (SLA) & Credits",
+          text: "Provider covenants to maintain 99.9% monthly platform uptime. In the event of unresolved downtime exceeding 0.1%, Customer shall be entitled to service credits not to exceed 10% of monthly fee.",
+          risk: "Low",
+          riskScore: 18,
+          statuteRef: "Model Enterprise SLA Standard",
+          explanation: "Clear service credit remedy as exclusive contractual remedy for downtime.",
+          verified: true
+        },
+        {
+          id: "c-2-3",
+          section: "Section 9.2",
+          title: "Unilateral Price Escalation at Renewal",
+          text: "Provider reserves the absolute right to increase annual subscription fees by up to fifteen percent (15%) upon each renewal period without requiring Customer's express written amendment.",
+          risk: "High",
+          riskScore: 82,
+          statuteRef: "Uniform Commercial Code § 2-302 (Unconscionability)",
+          explanation: "HIGH RISK: Uncapped 15% automatic escalation significantly exceeds CPI/inflation indices (standard is 3-5% capped).",
+          verified: true
+        },
+        {
+          id: "c-2-4",
+          section: "Section 14.1",
+          title: "Delaware Governing Law & Forum",
+          text: "This Agreement and all disputes arising hereunder shall be governed exclusively by the laws of the State of Delaware and adjudicated in the Court of Chancery.",
+          risk: "Low",
+          riskScore: 10,
+          statuteRef: "Del. Code tit. 8",
+          explanation: "Authoritative corporate forum selection with mature commercial precedent.",
+          verified: true
+        }
+      ]
     },
     {
       id: "doc-3",
@@ -119,7 +164,41 @@ const defaultData = {
       riskScore: 12,
       clausesCount: 8,
       highRisks: 0,
-      clauses: []
+      clauses: [
+        {
+          id: "c-3-1",
+          section: "Section 1.1",
+          title: "Scope of Evaluation Purpose",
+          text: "Confidential Information shall be accessed and used solely to evaluate potential Series B corporate financing transactions between the parties.",
+          risk: "Low",
+          riskScore: 10,
+          statuteRef: "Defend Trade Secrets Act (DTSA)",
+          explanation: "Properly tailored narrow evaluation purpose preventing competitive reverse engineering.",
+          verified: true
+        },
+        {
+          id: "c-3-2",
+          section: "Section 3.2",
+          title: "Trade Secret Safe Harbors & Exclusions",
+          text: "Confidential information excludes data publicly known, already in recipient's lawful possession, or independently developed without access.",
+          risk: "Low",
+          riskScore: 12,
+          statuteRef: "Uniform Trade Secrets Act (UTSA)",
+          explanation: "Standard trade secret carveouts required for legal enforceability.",
+          verified: true
+        },
+        {
+          id: "c-3-3",
+          section: "Section 6.1",
+          title: "Residual Knowledge & Memory Defense",
+          text: "Recipient employees may retain generalized concepts, techniques, and ideas in unaided memory without infringing confidentiality terms.",
+          risk: "Medium",
+          riskScore: 48,
+          statuteRef: "Cal. Civ. Code § 3426.1",
+          explanation: "Residuals clause is somewhat broad; could facilitate inadvertent trade secret leakage without written clean-room protocols.",
+          verified: true
+        }
+      ]
     },
     {
       id: "doc-4",
@@ -134,7 +213,41 @@ const defaultData = {
       riskScore: 54,
       clausesCount: 22,
       highRisks: 3,
-      clauses: []
+      clauses: [
+        {
+          id: "c-4-1",
+          section: "Section 4.1",
+          title: "Annual Base Rent Escalation",
+          text: "Tenant shall pay monthly base rent subject to a five percent (5.0%) compounding annual increase on each anniversary of lease commencement.",
+          risk: "Medium",
+          riskScore: 42,
+          statuteRef: "Standard BOMA Commercial Indices",
+          explanation: "Compounding 5% is above current regional commercial lease rates (typical 2.5% to 3.5%).",
+          verified: true
+        },
+        {
+          id: "c-4-2",
+          section: "Section 6.2",
+          title: "Operating Expenses (CAM) Pass-Through Allocation",
+          text: "Tenant shall pay proportionate share of all building operating costs, including Landlord's historical capital structural improvements and seismic retrofits amortized over 5 years.",
+          risk: "High",
+          riskScore: 89,
+          statuteRef: "Cal. Civ. Code § 1950.7 / BOMA 2017 Standards",
+          explanation: "CRITICAL RISK: Landlord passes through major building structural capital improvements that should be landlord expense, not operating expense.",
+          verified: true
+        },
+        {
+          id: "c-4-3",
+          section: "Section 11.4",
+          title: "Holdover Penalty Assessment Rate",
+          text: "In the event Tenant remains in possession following expiration, holdover rent shall be assessed at two hundred fifty percent (250%) of prevailing market base rent.",
+          risk: "High",
+          riskScore: 92,
+          statuteRef: "Cal. Civ. Code § 1671(b) (Illegal Penalty Prohibition)",
+          explanation: "CRITICAL UNENFORCEABLE PENALTY: Holdover penalties over 200% are routinely struck down as unlawful liquidated damages penalties under California law (*Ridgley v. Topa Thrift*).",
+          verified: true
+        }
+      ]
     }
   ],
   cases: [
@@ -551,6 +664,63 @@ class StorageService {
 
   getDraftTemplates() {
     return this.readDb().draftTemplates || [];
+  }
+
+  deleteCase(id) {
+    const db = this.readDb();
+    db.cases = (db.cases || []).filter(c => c.id !== id);
+    this.writeDb(db);
+    return true;
+  }
+
+  addApiKey(name) {
+    const db = this.readDb();
+    db.settings = db.settings || {};
+    db.settings.apiKeys = db.settings.apiKeys || [];
+    const newKey = {
+      name: name || "Enterprise Gateway Key",
+      key: "lex_live_" + Math.random().toString(36).substring(2, 8) + "..." + Math.random().toString(36).substring(2, 5),
+      created: new Date().toISOString().split("T")[0],
+      status: "Active"
+    };
+    db.settings.apiKeys.unshift(newKey);
+    this.writeDb(db);
+    return newKey;
+  }
+
+  revokeApiKey(keyStr) {
+    const db = this.readDb();
+    if (db.settings && db.settings.apiKeys) {
+      db.settings.apiKeys = db.settings.apiKeys.filter(k => k.key !== keyStr);
+      this.writeDb(db);
+      return true;
+    }
+    return false;
+  }
+
+  addTeamMember(member) {
+    const db = this.readDb();
+    db.settings = db.settings || {};
+    db.settings.team = db.settings.team || [];
+    const newMember = {
+      name: member.name || "Legal Counsel",
+      email: member.email || "counsel@vancelegal.com",
+      role: member.role || "Associate Counsel",
+      status: "Active"
+    };
+    db.settings.team.push(newMember);
+    this.writeDb(db);
+    return newMember;
+  }
+
+  removeTeamMember(email) {
+    const db = this.readDb();
+    if (db.settings && db.settings.team) {
+      db.settings.team = db.settings.team.filter(m => m.email !== email);
+      this.writeDb(db);
+      return true;
+    }
+    return false;
   }
 }
 
